@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/deposits.css') }}">
+
+{% endblock %}
+
+
+{% block title %}
+
+<title>Əmanətlər / Fərdi müştərilər - Rabitəbank</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="e-head-title">
+            <h1>Əmanətlər</h1>
+        </div>
+    
+        <div class="slidersx">
+
+            {% for deposit in data %}
+            <a href="/ferdi-musteriler/emanetler-az/{{deposit.deposit_name.deposit_name}}/" class="slide">
+                <div>
+                    <div class="slide-content">
+                        <div class="title">
+                            <h2>{{deposit.deposit_name.deposit_name}}</h2>
+                        </div>
+                        <div class="title-content">
+                            <p>{{deposit.context}}</p>
+                        </div>
+                        <div class="percent">
+                            <div class="l-percent">
+                                <p>Müddəti</p>
+                                <p>{{deposit.duration}}</p>
+                            </div>
+                            <div class="r-percent">
+                                <p>Faiz dərəcəsi</p>
+                                <p>{{deposit.percent_degree}}</p>
+                            </div>
+                        </div>
+                        <div class="currency">
+                            <p>Valyuta</p>
+                            <p>{{deposit.currency}}</p>
+                        </div>
+                    </div>
+                    <div class="slide-img">
+                        <img src="{{ url_for('static', filename='media/deposits/'+deposit.image_path) }}" alt="">
+                    </div>
+                    <div class="read-more">
+                        <span><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+
+        </div>
+
+        <div class="saxlanc-safe">
+            <div class="context">
+                <h3>Saxlanc seyfləri</h3>
+                <p>Rabitəbank qiymətlilərin saxlanması üçün saxlanc seyflərini sizə sərfəli şərtlərlə təqdim edir!</p>
+            </div>
+            <div class="img">
+                <img src="{{ url_for('static', filename='images/emanetler/green-safe.webp') }}" alt="">
+            </div>
+            <div class="ss-btn">
+                <a href="#">Daha ətraflı</a>
+            </div>
+        </div>
+
+        <div class="deposit">
+            <div class="deposit-form">
+                <div class="title">
+                    <h3>Onlayn əmanət sifariş edin</h3>
+                    <p>Banka getməyə ehtiyac yoxdur! <br> Çünki, artıq Bankınız hər zaman cibinizdədir.</p>
+                </div>
+                <div class="form">
+                    <form method="POST">
+                        {{ form.csrf_token }}
+
+                        <div class="form-title">
+                            <h3>{{form.deposit_type.label}}</h3>
+                        </div>
+                        <div class="first">
+                            {{form.deposit_type(class="radioInputDeposit")}}
+                        </div>
+                        <div class="second">
+                            <div class="name">
+                                <label for="">{{form.name.label}} <span class="important">*</span></label>
+                                <br>
+                                {{form.name}}
+                            </div>
+                            <div class="surname">
+                                <label for="">{{form.surname.label}} <span class="important">*</span></label>
+                                <br>
+                                {{form.surname}}
+                            </div>
+                            <div class="number">
+                                <label for="">Saxlanc seyfləri</label>
+                                <br>
+                                {{form.phone_number(type="tel", id="phone", placeholder="(050) 123-45-67", autocomplete="tel", maxlength="15", class="form-control", pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{2}-[0-9]{2}")}}
+                            </div>
+                        </div>
+                        <div class="third">
+                            <span class="important">*</span>
+                            <span class="important">Məlumatları Azərbaycan dilində daxil edin.</span>
+                            <p id="trueAlert" class="important" style="color: #80b554;"></p>
+                            <p id="falseAlert" class="important" style="color: #de3a42;"></p>
+                        </div>
+                        <div class="submit">
+                            <button>Sifariş et</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="deposit-advertising">
+                <div class="content">
+                    <h3>Universal əmanət</h3>
+                    <p>Pulunuz artmaqla yanaşı həm də qazanılan faizlərin götürülməsində geniş seçim imkanınız olacaq!</p>
+                </div>
+                <div class="layer"></div>
+                <img src="{{ url_for('static', filename='images/emanetler/deposits-banner2.webp') }}" alt="">
+            </div>
+        </div>
+
+
+    <script>
+        document.getElementById('phone').addEventListener('input', function (e) {
+            var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '')+ (x[4] ? '-' + x[4] : '');
+            console.log(x)
+        });
+
+        var label = document.querySelectorAll(".input-label")
+        function radioClick(e) {
+            e.addEventListener("click", () => {
+                label.forEach(element => {
+                    element.classList.remove("active")
+                });
+                e.classList.add("active")
+            })
+        }
+
+        var first = document.querySelector(".first").children
+        let firstCount = 0
+        let radioInputDeposit = document.querySelector(".radioInputDeposit").childElementCount
+        bruh = []
+
+        for(let i=0; i<radioInputDeposit; i++){
+            test = first[0].children[i].children[0]
+            bruh.push(test)
+        }
+
+        testx()
+        function testx() {
+            bruh.forEach(element => {
+                if(element.checked) {
+                    //pass
+                } else {
+                    element.parentElement.children[1].style.background = "#fff"
+                    element.parentElement.children[1].style.color = "#000"
+                }
+            });
+        }
+        
+        bruh.forEach(element => {
+            element.addEventListener("click", () => {
+                testx()
+                if(element.checked){
+                    element.parentElement.children[1].style.background = "#000"
+                    element.parentElement.children[1].style.color = "#fff"
+                }
+            })
+        });
+
+        function runAlert() {
+            document.getElementById('trueAlert').innerText = "* Onlayn əmanət sifariş olundu."
+        }
+
+        function notRunAlert() {
+            document.getElementById('falseAlert').innerText = "* Xəta baş verdi!\nYenidən cəhd edin."
+        }
+
+        {% if run != '' %}
+        {{run}}
+        {% endif %}
+
+    </script>
+    
+{% endblock %}

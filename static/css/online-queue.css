@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --------------------------------- online-novbe -------------------------------- */
+.online-novbe-title {
+    font-size: 32px;
+    color: #3a3a3a;
+    margin-bottom: 40px;
+}
+
+.container .online-novbe {
+    display: flex;
+    gap: 40px;
+}
+
+.container .online-novbe .novbe-form {
+    width: 50%;
+    border-radius: 40px;
+    background: #f3f4f5;
+    padding: 50px;
+}
+
+.container .online-novbe .novbe-form .title {
+    margin-bottom: 40px;
+}
+
+.container .online-novbe .novbe-form .title h3 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.container .online-novbe .novbe-form .title p {
+    color: #000;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.container .online-novbe .novbe-form .form form .form-fields {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(190px, 1fr) );
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.container .online-novbe .novbe-form .form form .form-fields label {
+    color: #888888;
+    font-size: 12px;
+}
+
+.container .online-novbe .novbe-form .form form .form-fields .form-field label {
+    position: relative;
+    top: 6px;
+}
+
+.container .online-novbe .novbe-form .form form .form-fields .form-field input {
+    margin-top: 9px;
+}
+
+.container .online-novbe .novbe-form .form form .form-fields input {
+    background: #fafafa;
+    border: 1.5px solid #888888a4;
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+}
+
+.container .online-novbe .novbe-form .form form .form-fields label span {
+    color: #de3a42;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+}
+
+.container .online-novbe .novbe-form .form form .form-fields select {
+    background: #fafafa;
+    border: 1.5px solid #888888a4;
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.container .online-novbe .novbe-form .form form .submit button {
+    background: #80b554;
+    padding: 10px 15px;
+    color: #fafafa;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    transition: .3s;
+}
+
+.container .online-novbe .novbe-form .form form .submit button:hover {
+    background: hsl(93, 40%, 45%);
+}
+
+.container .online-novbe .maps {
+    width: 50%;
+    border-radius: 40px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.167);
+}
+
+.container .online-novbe .maps iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    border: none;
+}
+/* --------------------------------- online-novbe -------------------------------- */
+
+
+

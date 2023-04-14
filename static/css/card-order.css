@@ -1,0 +1,892 @@
+body {
+    position: static;
+}
+/* --------------------------------- BANNER --------------------------------- */
+nav .first-nav .left ul li a,
+nav .first-nav .right ul li a,
+nav .second-nav .left ul li .business,
+nav .third-nav .left ul li a{
+    color: #fafafa;
+}
+
+nav .third-nav .left ul li .dots-menu {
+    color: #000;
+}
+
+nav .second-nav .left ul li .logo img {
+    color: red;
+}
+.container .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(344.09deg,#52c234 15.38%,#061700 100.48%);
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    padding-bottom: 130px;
+    height: 550px;
+    z-index: -1;
+}
+
+.container .banner .content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+    top: 100px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .banner .content .context {
+    width: 50%;
+    padding-left: 20px;
+}
+
+.container .banner .content .context h3 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #fff
+}
+
+.container .banner .content .context p {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.container .banner .content .context button {
+    background: #def4cd;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+}
+
+.container .banner .content .img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .banner .content .img img {
+    object-fit: cover;
+    object-position: center;
+    width: 70%;
+}
+/* --------------------------------- BANNER --------------------------------- */
+
+/* --------------------------- CARD ORDER CATEGORY -------------------------- */
+.container .kart-order-category ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 20px 0 40px 0;
+    border-bottom: 1px solid hsl(0, 0%, 83%);
+    height: 60px;
+    align-items: center;
+    margin-top: 370px;
+}
+
+.container .kart-order-category ul li {
+    height: 100%;
+}
+
+.container .kart-order-category ul li a {
+    display: inline-block;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #888888;
+    letter-spacing: 1px;
+}
+
+.container .kart-order-category ul li a.active {
+    border-bottom: 3px solid hsl(0, 0%, 0%);
+    color: #000;
+}
+/* --------------------------- CARD ORDER CATEGORY -------------------------- */
+
+/* -------------------------------- FEATURES -------------------------------- */
+.container .features .head h3 {
+    font-size: 25px;
+    color: #3a3a3a;
+    margin-bottom: 25px;
+}
+
+.container .features .fearures-icon {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.container .features .fearures-icon .features-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.container .features .fearures-icon .features-card .icon {
+    width: 35px;
+    height: 35px;
+    background: #80b554;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fafafa;
+    font-size: 20px;
+}
+
+.container .features .fearures-icon .features-card .context .top {
+    color: #888888;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.container .features .fearures-icon .features-card .context .bottom {
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+/* -------------------------------- FEATURES -------------------------------- */
+
+/* -------------------------------- BANNER 2 -------------------------------- */
+.container .banner-2 {
+    margin-top: 80px;
+    padding: 0 100px;
+    background: linear-gradient(232.01deg,#8ac659 26.51%,#60a02a 71.93%);
+    border-radius: 30px;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .banner-2 .context {
+    width: 40%;
+}
+
+.container .banner-2 .context h3 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 16px;
+    width: 80%;
+}
+
+.container .banner-2 .context p {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+    width: 80%;
+}
+
+.container .banner-2 .img {
+    width: 30%;
+}
+
+.container .banner-2 .img img {
+    width: 90%;
+    object-fit: cover;
+    object-position: center;
+    transition: .3s;
+}
+
+.container .banner-2:hover .img img {
+    width: 93%;
+}
+
+.container .banner-2 .btn {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container .banner-2 .btn button {
+    background: #262f40;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    border: 1px solid #262f40;
+    transition: .3s;
+}
+
+.container .banner-2 .btn button:hover {
+    background: #fff;
+    color: #262f40;
+}
+/* -------------------------------- BANNER 2 -------------------------------- */
+
+/* -------------------------- CARD ORDER CALCULATOR ------------------------- */
+.container .card-order-calculator {
+    background: transparent;
+    padding: 40px;
+    border-radius: 30px;
+    margin-top: 70px;
+}
+
+.container .card-order-calculator .head h3 {
+    font-size: 28px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.container .card-order-calculator .content {
+    display: flex;
+    align-items: center;
+}
+
+.container .card-order-calculator .content .left {
+    width: 50%;
+}
+
+.container .card-order-calculator .content .left .head h3 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #3a3a3a;
+    font-weight: 500;
+    width: 80%;
+}
+
+.container .card-order-calculator .content .left .card-order-value {
+    margin-bottom: 20px;
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .rangeslider{
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    top: 0;
+    height: 6px;
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .rangeslider .rangeslider__fill {
+    background: #80b554;
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .rangeslider .rangeslider__handle{
+    width: 20px;
+    height: 20px;
+    border: 5px solid #000;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value {
+    width: 70%;
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .displayed small {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 300;
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .displayed .cal-input {
+    position: relative;
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .displayed .cal-input input {
+    width: 100%;
+    padding: 10px 15px;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .displayed .cal-input input::-webkit-outer-spin-button,
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .displayed .cal-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .displayed .cal-input input[type=number],
+.container .currency-credit .credit .calculator .values .bottom .displayed .cal-input input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.container .card-order-calculator .content .left .card-order-value .calculator .values .first-value .displayed .cal-input span {
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.container .card-order-calculator .content .left .note p {
+    font-weight: 300;
+    width: 80%;
+}
+
+.container .card-order-calculator .content .right {
+    padding: 40px 48px;
+    background: #f1f4ee;
+    border-radius: 40px;
+    width: 50%;
+}
+
+.container .card-order-calculator .content .right .value {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+}
+
+.container .card-order-calculator .content .right .value .total-percent .head,
+.container .card-order-calculator .content .right .value .percent-degree .head {
+    color: #888;
+    font-size: 15px;
+}
+
+.container .card-order-calculator .content .right .value .total-percent #head-value,
+.container .card-order-calculator .content .right .value .percent-degree #percent-degree-value {
+    font-size: 28px;
+    color: #000;
+    font-weight: bold;
+}
+
+.container .card-order-calculator .content .right .about p {
+    font-weight: 300;
+    margin: 20px 0 10px;
+}
+
+.container .card-order-calculator .content .right .button button {
+    background: #80b554;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+/* SLİDER CHECKBOX */ 
+.container .card-order-calculator .content .left .slider-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.container .card-order-calculator .content .left .slider-checkbox .cashless.active,
+.container .card-order-calculator .content .left .slider-checkbox .cash.active {
+    opacity: 1;
+    transition: .4s;
+}
+
+.container .card-order-calculator .content .left .slider-checkbox .cashless,
+.container .card-order-calculator .content .left .slider-checkbox .cash {
+    opacity: .3;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.container .card-order-calculator .content .left .slider-checkbox .switch {
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    width: 30px;
+}
+
+.container .card-order-calculator .content .left .slider-checkbox .switch input {
+    display: none;
+}
+
+.container .card-order-calculator .content .left .slider-checkbox .slider {
+    border: 2px solid #80b554;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.container .card-order-calculator .content .left .slider-checkbox .slider:before {
+    background-color: #80b554;
+    bottom: 2px;
+    content: "";
+    height: 10px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 10px;
+}
+
+.container .card-order-calculator .content .left .slider-checkbox input:checked+.slider {
+    border: 2px solid #80b554;
+}
+
+.container .card-order-calculator .content .left .slider-checkbox input:checked+.slider:before {
+    transform: translateX(9px);
+}
+
+.container .card-order-calculator .content .left .slider-checkbox .slider.round {
+    border-radius: 34px;
+}
+
+.container .card-order-calculator .content .left .slider-checkbox .slider.round:before {
+    border-radius: 50%;
+    right: 3px;
+}
+/* SLİDER CHECKBOX */
+/* -------------------------- CARD ORDER CALCULATOR ------------------------- */
+
+/* ------------------------------- CARD SLIDER ------------------------------ */
+.container .card-order-sliders-head h3 {
+    font-size: 32px;
+    color: #3a3a3a;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.container .card-order-sliders .slide {
+    border: 1px solid #80b554;
+    color: rgba(0,0,0,.6);
+    border: 1px solid #e3e5e1;
+    background-color: #f1f4ee;
+    border-radius: 24px;
+    margin-left: 40px;
+    padding: 40px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .card-order-sliders a {
+    opacity: 1;
+}
+
+.container .card-order-sliders .slide:hover {
+    background: #80b554;
+    color: #fff;
+}
+
+.container .card-order-sliders .slide h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.container .card-order-sliders .slide p {
+    font-weight: 300;
+}
+
+.container .card-order-sliders .slick-dots {
+    bottom: -50px;
+}
+
+.container .card-order-sliders .slick-dots .slick-active button::before {
+    content: "";
+    width: 17px;
+    height: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    background-color: #80B554;
+    transition: .5s;
+    transform-origin: right;
+}
+.container .card-order-sliders .slick-dots li {
+    width: 13px;
+    height: 8px;
+}
+.container .card-order-sliders .slick-dots li button::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #000;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .5s;
+    opacity: 1;
+}
+/* ------------------------------- CARD SLIDER ------------------------------ */
+
+/* ------------------------------- OTHER CARDS ------------------------------ */
+.container .other-card-head h3 {    font-size: 32px;
+    color: #3a3a3a;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.container .other-cards {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.container .other-cards .card {
+    width: 50%;
+    border-radius: 30px;
+    padding: 40px;
+    background: #f1f4ee;
+    color: #000;
+    display: flex;
+}
+
+.container .other-cards .card .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .other-cards .card .content h3 {
+    font-size: 24px ;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.container .other-cards .card .content p {
+    font-weight: 300;
+}
+
+.container .other-cards .card .content button {
+    background: #80b554;
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    width: max-content;
+    transition: .3s;
+}
+
+.container .other-cards .card .content button:hover {
+    color: #fff;
+    background: hsl(93, 40%, 42%);
+}
+
+.container .other-cards .card .img {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container .other-cards .card .img img {
+    width: 90%;
+    transition: .3s;
+    object-fit: cover;
+    object-position: center;
+}
+.container .other-cards .card.premium {
+    background: #000;
+    color: #f1f4ee;
+}
+/* ------------------------------- OTHER CARDS ------------------------------ */
+.container .card-order-form {
+    background: #f3f4f5;
+    padding: 55px 80px;
+    border-radius: 40px;
+    display: flex;
+    gap: 40px;
+}
+
+.container .card-order-form .deposit-form {
+    width: 60%;
+}
+
+.container .card-order-form .deposit-form > .title h3 {
+    color: #3a3a3a;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.container .card-order-form .deposit-form > .title p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #3a3a3a;
+}
+
+.container .card-order-form .deposit-form .form form .first {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.container .card-order-form .deposit-form .form form .first .title {
+    color: #888888;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.container .card-order-form .deposit-form .form form .first .visa .img {
+    border-radius: 20px;
+    display: inline-block;
+    width: 65px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .card-order-form .deposit-form .form form .first .visa .img img {
+    width: 55%;
+}
+
+.container .card-order-form .deposit-form .form form .first .currency .currency-ul {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: max-content;
+    border-radius: 20px;
+    display: flex;
+    list-style: none;
+}
+
+.container .card-order-form .deposit-form .form form .first .currency .currency-ul li a {
+    background: transparent;
+    display: inline-block;
+    width: 55px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .card-order-form .deposit-form .form form .first .visa .buttons{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: max-content;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.container .card-order-form .deposit-form .form form .first .visa button,
+.container .card-order-form .deposit-form .form form .currency .currency-ul button {
+    background: transparent;
+    display: inline-block;
+    width: 55px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .card-order-form .deposit-form .form form .error-ul {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.1);
+}
+
+.container .card-order-form .deposit-form .form form .error-ul li {
+    color: #de3a42;
+    font-size: 14px;
+    width: 100%;
+}
+
+.container .card-order-form .deposit-form .form form .success-ul {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: rgba(0,255,0,0.1);
+}
+
+.container .card-order-form .deposit-form .form form .success-ul li {
+    color: hsl(93, 40%, 40%);
+    font-size: 14px;
+    width: 100%;
+}
+
+
+.container .card-order-form .deposit-form .form form .first .currency .currency-ul li button.active {
+    background: #fff;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+.container .card-order-form .deposit-form .form form .first .visa button.active {
+    background: #fff;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+/* ------------------------------------ - ----------------------------------- */
+
+.container .card-order-form .deposit-form .form form .second {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    gap: 40px;
+    margin-bottom: 16px;
+}
+
+.container .card-order-form .deposit-form .form form .second label {
+    color: #888888;
+    font-size: 12px;
+}
+
+.container .card-order-form .deposit-form .form form .second input {
+    background: #fafafa;
+    border: 1.5px solid #88888881;
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+}
+
+.container .card-order-form .deposit-form .form form .second label span {
+    color: #de3a42;
+    font-size: 20px;
+}
+
+.container .card-order-form .deposit-form .form form .second .fa-circle-question {
+    position: relative;
+    cursor: pointer;
+}
+
+.container .card-order-form .deposit-form .form form .second .fa-circle-question .fin-code {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    padding: 20px 25px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.container .card-order-form .deposit-form .form form .second .fa-circle-question .fin-code hr {
+    margin: 15px 0;
+    opacity: .5;
+}
+
+.container .card-order-form .deposit-form .form form .second .fa-circle-question .fin-code ul {
+    list-style: none;
+}
+
+.container .card-order-form .deposit-form .form form .second .fa-circle-question .fin-code ul img {
+    width: 130px;
+}
+
+.container .card-order-form .deposit-form .form form .second .fa-circle-question:hover .fin-code {
+    display: block;
+}
+
+.container .card-order-form .deposit-form .form form .third {
+    margin-bottom: 16px;
+}
+
+.container .card-order-form .deposit-form .form form .third span:nth-child(1) {
+    color: #de3a42;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+}
+
+.container .card-order-form .deposit-form .form form .third span:nth-child(2) {
+    color: #de3a42;
+    font-size: 12px;
+}
+
+.container .card-order-form .deposit-form .form form .submit button {
+    background: #80b554;
+    padding: 10px 15px;
+    color: #fafafa;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    transition: .3s;
+}
+
+.container .card-order-form .deposit-form .form form .submit button:hover {
+    background: hsl(93, 40%, 45%);
+}
+
+/* ------------------------------------ - ----------------------------------- */
+
+.container .card-order-form .step-image {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .card-order-form .step-image .step ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 30px;
+    padding: 15px 20px;
+}
+
+.container .card-order-form .step-image .step ul li a {
+    opacity: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.container .card-order-form .step-image .step .dash {
+    letter-spacing: 4px;
+    width: 40px;
+}
+
+.container .card-order-form .step-image .step ul li a.deactive {
+    color: rgba(0, 0, 0, 0.125);
+    pointer-events: none;
+}
+
+.container .card-order-form .step-image .step ul li a.deactive .number {
+    background: rgba(0, 0, 0, 0.07);
+    color: rgba(0, 0, 0, 0.325);
+}
+
+.container .card-order-form .step-image .step ul li a .number {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background: #80b554;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.container .card-order-form .step-image .img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container .card-order-form .step-image .img img {
+    width: 120%;
+    object-fit: cover;
+    object-position: center;
+}

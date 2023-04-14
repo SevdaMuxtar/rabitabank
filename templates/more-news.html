@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+<!-- Slick Slider -->
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/slick/slick.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/slick/slick-theme.css') }}">
+<!-- Slick Slider -->
+
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/rangeslider.js-2.3.0/rangeslider.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/more-news.css') }}">
+
+{% endblock %}
+
+
+
+{% block title %}
+<title>Rabita Bank</title>
+{% endblock %}
+
+
+{% block content %}
+
+        {% for news in data %}
+
+        <div class="content">
+
+            <div class="img">
+                <img src="{{ news.img }}" alt="">
+            </div>
+            <div class="tag">
+                <p>{{news.share_time}}</p>
+            </div>
+            <div class="context">
+                <h3>{{ news.title }}</h3>
+                <div>
+                    <p>{{ news.context }}</p>
+                </div>
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/vendor/slick/slick.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/vendor/rangeslider.js-2.3.0/rangeslider.min.js') }}"></script>
+
+{% endblock %}

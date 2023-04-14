@@ -1,0 +1,479 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+<!-- Slick Slider -->
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/slick/slick.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/slick/slick-theme.css') }}">
+<!-- Slick Slider -->
+
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/rangeslider.js-2.3.0/rangeslider.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+
+
+{% block title %}
+<title>Rabitəbank</title>
+{% endblock %}
+
+
+{% block content %}
+        <div class="sliders">
+
+            <div class="slide">
+                <div class="content">
+                    <div class="title">
+                        <h3>Kartmane Kredit kartı</h3>
+                        <p class="detail"></p>
+                    </div>
+                    <div class="context">
+                        <div class="first">
+                            <p class="key">Nağdaşdırma</p>
+                            <p class="value">100%</p>
+                        </div>
+                        <div class="second">
+                            <p class="key">Güzəşt müddəti</p>
+                            <p class="value">100 gün</p>
+                        </div>
+                        <div class="third">
+                            <p class="key">Kart limiti</p>
+                            <p class="value">200 - 15 000 AZN</p>
+                        </div>
+                    </div>
+                    <div class="slider-btn">
+                        <a href="#">Sifariş et</a>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="{{ url_for('static', filename='images/esas-sehife/kredit-sayt-banner.webp') }}" alt="">
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="content">
+                    <div class="title">
+                        <h3>Kartmane Kredit kartı</h3>
+                        <p class="detail">Bütün ehtiyaclar üçün nağd pul krediti</p>
+                    </div>
+                    <div class="context">
+                        <div class="first">
+                            <p class="key">Nağdaşdırma</p>
+                            <p class="value">100%</p>
+                        </div>
+                        <div class="second">
+                            <p class="key">Güzəşt müddəti</p>
+                            <p class="value">100 gün</p>
+                        </div>
+                        <div class="third">
+                            <p class="key">Kart limiti</p>
+                            <p class="value">200 - 15 000 AZN</p>
+                        </div>
+                    </div>
+                    <div class="slider-btn">
+                        <a href="#">Sifariş et</a>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="{{ url_for('static', filename='images/esas-sehife/287211137-390228146405222-2435774707310499160-n.webp') }}" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="fast-transition">
+            <div class="title">
+                <h3>Sürətli keçidlər</h3>
+            </div>
+            <div class="cards">
+
+                <a class="card">
+                    <span>Nağd pul krediti</span>
+                    <img src="{{ url_for('static', filename='images/esas-sehife/fast-transition-1.png') }}" alt="">
+                </a>
+
+                <a class="card">
+                    <span>Əmanətlər</span>
+                    <img src="{{ url_for('static', filename='images/esas-sehife/fast-transition-2.webp') }}" alt="">
+                </a>
+
+                <a class="card">
+                    <span>Pul köçürmələri</span>
+                    <img src="{{ url_for('static', filename='images/esas-sehife/fast-transition-3.webp') }}" alt="">
+                </a>
+
+                <a class="card">
+                    <span>Keşbek</span>
+                    <img src="{{ url_for('static', filename='images/esas-sehife/fast-transition-4.webp') }}" alt="">
+                </a>
+
+                <a class="card">
+                    <span>Kampaniyalar</span>
+                    <img src="{{ url_for('static', filename='images/esas-sehife/fast-transition-5.webp') }}" alt="">
+                </a>
+
+                <a class="card karmane-premium">
+                    <span>Kartmane Premium</span>
+                    <img src="{{ url_for('static', filename='images/esas-sehife/fast-transition-6.webp') }}" alt="">
+                </a>
+
+            </div>
+        </div>
+
+        <div class="rabita-mobile">
+            <div class="content">
+                <div class="top">
+                    <h3>Rabita Mobile</h3>
+                    <p>Hər yerdə maliyyə xidmətlərimizdən faydalanmaq üçün Rabita Mobile istifadə edin!</p>
+                </div>
+                <div class="bottom">
+                    <img src="{{ url_for('static', filename='images/esas-sehife/qr_mobile.jpg') }}" alt="">
+                    <p>Telefonunuzun kamerası ilə QR codu scan edin</p>
+                </div>
+            </div>
+            <div class="img">
+                <img src="{{ url_for('static', filename='images/esas-sehife/online.webp') }}" alt="">
+            </div>
+        </div>
+
+        <div class="currency-credit">
+            <div class="currency">
+                <div class="head">
+                    <h3>Valyuta kursu</h3>
+                    <div class="slider-checkbox">
+                        <label for="" id="cashless" class="cashless cs-label active">Nağdsız</label>
+                        <label class="switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" onclick="checkboxSlider()" />
+                            <div class="slider round"></div>
+                        </label>
+                        <label for="" id="cash" class="cash cs-label">Nağd</label>
+                    </div>
+                </div>
+
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>Valyuta</td>
+                            <td>Alış</td>
+                            <td>Satış</td>
+                            <td>Mərkəzi Bank</td>
+                        </tr>
+                        <tr>
+                            <td>GBP</td>
+                            <td>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                                <i class="fa-solid fa-caret-up"></i>
+                                1.928
+                            </td>
+                            <td>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                                <i class="fa-solid fa-caret-up"></i>
+                                1.997
+                            </td>
+                            <td class="gbp" data-change="{{gbp_change}}">
+                                <i class="fa-solid fa-circle gbp-const"></i>
+                                <i class="fa-solid fa-caret-down gbp-down"></i>
+                                <i class="fa-solid fa-caret-up gbp-up"></i>
+                                {{gbp}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RUB</td>
+                            <td>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                                <i class="fa-solid fa-caret-up"></i>
+                                0.027
+                            </td>
+                            <td>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                                <i class="fa-solid fa-caret-up"></i>
+                                0.0295
+                            </td>
+                            <td class="rub" data-change="{{rub_change}}">
+                                <i class="fa-solid fa-circle rub-const"></i>
+                                <i class="fa-solid fa-caret-down rub-down"></i>
+                                <i class="fa-solid fa-caret-up rub-up"></i>
+                                {{rub}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>EUR</td>
+                            <td>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                                <i class="fa-solid fa-caret-up"></i>
+                                1.685
+                            </td>
+                            <td>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                                <i class="fa-solid fa-caret-up"></i>
+                                1.725
+                            </td>
+                            <td class="eur" data-change="{{eur_change}}">
+                                <i class="fa-solid fa-circle eur-const"></i>
+                                <i class="fa-solid fa-caret-down eur-down"></i>
+                                <i class="fa-solid fa-caret-up eur-up"></i>
+                                {{eur}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>USD</td>
+                            <td>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                                <i class="fa-solid fa-caret-up"></i>
+                                1.69
+                            </td>
+                            <td>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-caret-down"></i>
+                                <i class="fa-solid fa-caret-up"></i>
+                                1.702
+                            </td>
+                            <td class="usd" data-change="{{usd_change}}">
+                                <i class="fa-solid fa-circle usd-const"></i>
+                                <i class="fa-solid fa-caret-down usd-down"></i>
+                                <i class="fa-solid fa-caret-up usd-up"></i>
+                                {{usd}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="currency-btn">
+                    <p>Kurs 01.09.22 tarixinə qədər aktivdir.</p>
+                    <button>Konvertasiya et</button>
+                </div>
+            </div>
+            <div class="credit">
+                <div class="calculator">
+
+                    <form action="">
+                        <div class="heading">
+                            <h2 class="title">Kredit kalkulyatoru</h2>
+                        </div>
+
+                        <div class="values">
+    
+                            <div class="first-value">
+                                <div class="displayed">
+                                    <small>Kredit məbləği</small>
+                                    <div class="cal-input">
+                                        <input id="credit-value" class="valueInput" type="number" min="300" max="30000" value="30000" step="100" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "5">
+                                        <span>AZN</span>
+                                    </div>
+                                </div>
+                                <input id="inputSlider-1" class="inputSlider" type="range" name="monthInputEl" id="monthInputEl"
+                                    min="300" max="30000" value="30000" step="100">
+                            </div>
+        
+                            <div class="bottom">
+    
+                                <div class="value">
+                                    <div class="displayed">
+                                        <small>Kredit müddəti</small>
+                                        <div class="cal-input">
+                                            <input id="credit-duration" class="valueInput" type="number" min="3" max="48" value="48" step="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "2">
+                                            <span>Ay</span>
+                                        </div>
+                                    </div>
+                                    <input id="inputSlider-2" class="inputSlider" type="range" name="loanInputEl" id="loanInputEl" min="3" max="48" step="1" value="48">
+                                </div>
+            
+                                <div class="value">
+                                    <div class="displayed">
+                                        <small>Faiz dərəcəsi</small>
+                                        <div class="cal-input">
+                                            <input id="percentValue" class="valueInput" type="number" min="12" max="18" value="14" step="1" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "2">
+                                            <span>%</span>
+                                        </div>
+                                    </div>
+                                    <input id="inputSlider-3" class="inputSlider" type="range" name="percentInputEl" id="percentInputEl" min="12" max="18" step="1" value="14">
+                                </div>
+    
+                            </div>
+        
+                        </div>
+                        <div class="results">
+        
+                            <div class="result" style="visibility: hidden; width: 0px; height: 0px;">
+                                <p class="resultText">Ümumi məbləğ</p>
+                                <p id="totalResultEl">345</p><span>AZN</span>
+                            </div>
+        
+                            <div class="result" style="visibility: hidden; width: 0px; height: 0px;">
+                                <p class="resultText">Faiz məbləği</p>
+                                <p id="loanResultEl">45</p><span>AZN</span>
+                            </div>
+        
+                            <div class="result">
+                                <div class="result-value">
+                                    <p class="resultText">Aylıq ödəniş:</p>
+                                    <p id="monthlyResultEl">975</p>
+                                    <span>₼</span>
+                                </div>
+                                <button id="calculateBtn" class="btn">Sifariş et</button>
+                            </div>
+        
+        
+                        </div>
+
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+
+        <div class="main-banner">
+            <div class="img-1">
+                <img src="{{ url_for('static', filename='images/esas-sehife/bot-new.webp') }}" alt="">
+            </div>
+            <div class="content">
+                <div>
+                    <h3>Rabita Bot</h3>
+                    <p>RabitəBot ilə bank xidmətlərindən 24/7 rahat və sürətli faydalana bilərsiniz!</p>
+                </div>
+            </div>
+            <div class="img-2">
+                <img src="{{ url_for('static', filename='images/esas-sehife/bot-text-new2.webp') }}" alt="">
+            </div>
+        </div>
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/vendor/slick/slick.min.js') }}"></script>
+    
+
+    <script src="{{ url_for('static', filename='js/vendor/rangeslider.js-2.3.0/rangeslider.min.js') }}"></script>
+
+    <script>
+        var gbp = document.querySelector(".gbp")
+        var rub = document.querySelector(".rub")
+        var eur = document.querySelector(".eur")
+        var usd = document.querySelector(".usd")
+
+        if(gbp.getAttribute("data-change") === "down"){
+            document.querySelector(".gbp-down").style.display = 'inline-block'
+        }
+        if(gbp.getAttribute("data-change") === "up"){
+            document.querySelector(".gbp-up").style.display = 'inline-block'
+        }
+        if(gbp.getAttribute("data-change") === "const"){
+            document.querySelector(".gbp-const").style.display = 'inline-block'
+        }
+
+        if(rub.getAttribute("data-change") === "down"){
+            document.querySelector(".rub-down").style.display = 'inline-block'
+        }
+        if(rub.getAttribute("data-change") === "up"){
+            document.querySelector(".rub-up").style.display = 'inline-block'
+        }
+        if(rub.getAttribute("data-change") === "const"){
+            document.querySelector(".rub-const").style.display = 'inline-block'
+        }
+
+        if(eur.getAttribute("data-change") === "down"){
+            document.querySelector(".eur-down").style.display = 'inline-block'
+        }
+        if(eur.getAttribute("data-change") === "up"){
+            document.querySelector(".eur-up").style.display = 'inline-block'
+        }
+        if(eur.getAttribute("data-change") === "const"){
+            document.querySelector(".eur-const").style.display = 'inline-block'
+        }
+
+        if(usd.getAttribute("data-change") === "down"){
+            document.querySelector(".usd-down").style.display = 'inline-block'
+        }
+        if(usd.getAttribute("data-change") === "up"){
+            document.querySelector(".usd-up").style.display = 'inline-block'
+        }
+        if(usd.getAttribute("data-change") === "const"){
+            document.querySelector(".usd-const").style.display = 'inline-block'
+        }
+
+        $(document).ready(function () {
+
+            var creditValuex = document.getElementById("credit-value")
+            creditValuex.addEventListener("input", () => {
+              calculateResults()
+            })
+            
+            var percentValuex = document.getElementById("percentValue")
+            percentValuex.addEventListener("input", () => {
+              calculateResults()
+            })
+            
+            var creditDurationx = document.getElementById("credit-duration")
+            creditDurationx.addEventListener("input", () => {
+              calculateResults()
+            })
+            
+            function calculateResults() {
+              var creditValueInput = document.querySelector("#credit-value").value
+              var creditDurationInput = document.getElementById("credit-duration").value
+              var percentInput = document.querySelector("#percentValue").value
+            
+              creditValueInput = parseInt(creditValueInput)
+              creditDurationInput = parseInt(creditDurationInput)
+              percentInput = parseInt(percentInput)
+            
+              userPercent = (creditDurationInput / 12) * percentInput
+              addPercentValue = (creditValueInput * userPercent) / 100
+              totalResultValue = Math.floor((addPercentValue + creditValueInput) / creditDurationInput);
+            
+              updateUI()
+            }
+            
+            function updateUI() {
+              document.getElementById("monthlyResultEl").innerText = `${totalResultValue}`
+            }
+          
+            var $element = $('.inputSlider');
+            $element
+              .rangeslider({
+                polyfill: false
+              })
+          
+            for (let slider of document.querySelectorAll(".rangeslider__handle")) {
+              slider.addEventListener("mouseenter", () => {
+                $element.rangeslider({})
+                  .on('input', function () {
+                    if (slider.parentElement.id === "js-rangeslider-0") {
+                      if (this.id === "inputSlider-1") {
+                        var creditValue = parseInt(this.value)
+                        document.querySelector("#credit-value").value = creditValue
+                      }
+                    }
+                    if (slider.parentElement.id === "js-rangeslider-1") {
+                      if (this.id === "inputSlider-2") {
+                        var creditDuration = parseInt(this.value)
+                        document.querySelector("#credit-duration").value = creditDuration
+                      }
+                    }
+                    if (slider.parentElement.id === "js-rangeslider-2") {
+                      if (this.id === "inputSlider-3") {
+                        var percent = parseFloat(this.value)
+                        document.querySelector("#percentValue").value = percent
+                      }
+                    }
+          
+                    calculateResults()
+          
+                  });
+              })
+            }
+          
+          
+          });
+    </script>
+
+
+{% endblock %}

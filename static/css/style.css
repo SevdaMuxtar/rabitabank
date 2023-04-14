@@ -1,0 +1,598 @@
+
+
+/* SLIDER */
+.sliders .slide {
+    display: flex;
+    align-items: center;
+    padding: 0 70px;
+    height: 300px;
+}
+
+.sliders .slide .content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 70%;
+}
+
+.sliders .slide .content .title h3 {
+    font-size: 26px;
+    color: #000;
+    margin-bottom: 25px;
+}
+
+.sliders .slide .content .title .detail {
+    font-weight: 300;
+}
+
+.sliders .slide .context {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sliders .slide .context .key {
+    color: #3a3a3a;
+    font-size: 12px;
+    margin-bottom: 7px;
+    font-weight: 300;
+}
+
+.sliders .slide .context .value {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.sliders .slide .slider-btn a {
+    padding: 10px 15px;
+    background: #80b554;
+    border-radius: 10px;
+    color: #fafafa;
+    display: inline-block;
+}
+
+.sliders .slide .img {
+    width: 30%;
+}
+
+.sliders .slide .img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.sliders .slick-next {
+    right: 0;
+    background: #f1f4ee;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.sliders .slick-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f054";
+    color: #000;
+}
+
+.sliders .slick-prev::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f053";
+    color: #000;
+}
+
+.sliders .slick-prev {
+    left: 0;
+    background: #f1f4ee;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+
+.sliders .slick-dots .slick-active button::before {
+    content: "";
+    width: 20px;
+    height: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    background-color: #80b554;
+    transition: .5s;
+    transform-origin: right;
+}
+
+.sliders .slick-dots li {
+    width: 13px;
+    height: 8px;
+}
+
+.sliders .slick-dots li button::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #000;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .5s;
+    opacity: 1;
+}
+/* SLIDER */
+
+/* FAST TRANSİTİON */
+.container .fast-transition .title h3 {
+    font-size: 25px;
+    color: #3a3a3a;
+    margin-bottom: 25px;
+}
+
+.container .fast-transition .cards {
+    display: flex;
+    gap: 30px;
+}
+
+.container .fast-transition .cards .card {
+    position: relative;
+    background: #f1f4ee;
+    border-radius: 30px;
+    width: 20%;
+    height: 200px;
+    padding: 10px;
+    text-align: center;
+    z-index: -1;
+}
+
+.container .fast-transition .cards .karmane-premium {
+    background: #000;
+    color: #fafafa;
+}
+
+.container .fast-transition .cards .card span {
+    position: relative;
+    top: 20px;
+}
+
+.container .fast-transition .cards .card img {
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    transition: .3s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container .fast-transition .cards .card:hover img {
+    width: 92%;
+}
+/* FAST TRANSİTİON */
+
+/* RABITA MOBILE */
+.container .rabita-mobile {
+    display: flex;
+    padding: 0 50px;
+    margin: 60px 0;
+}
+
+.container .rabita-mobile .content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.container .rabita-mobile .content .top h3 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.container .rabita-mobile .content .top p {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.container .rabita-mobile .content .bottom {
+    display: flex;
+    align-items: center;
+}
+
+.container .rabita-mobile .content .bottom img {
+    width: 35%;
+}
+
+.container .rabita-mobile .content .bottom p {
+    color: #000;
+    font-weight: 300;
+}
+
+.container .rabita-mobile .img {
+    width: 60%;
+}
+
+.container .rabita-mobile .img img {
+    width: 100%;
+}
+/* RABITA MOBILE */
+
+/* MAİN BANNER */
+.container .main-banner {
+    display: flex;
+    background: linear-gradient(232.01deg, #8AC659 26.51%, #60A02A 71.93%);
+    height: 250px;
+    border-radius: 40px;
+}
+
+.container .main-banner .img-1 {
+    width: 33%;
+    position: relative;
+}
+
+.container .main-banner .img-1 img {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .main-banner .content {
+    width: 33%;
+    display: flex;
+    align-items: center;
+}
+
+.container .main-banner .content h3 {
+    color: #fafafa;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.container .main-banner .content p {
+    color: #fafafa;
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: 300;
+}
+
+.container .main-banner .img-2 {
+    width: 33%;
+    position: relative;
+}
+
+.container .main-banner .img-2 img {
+    width: 100%;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 0;
+}
+/* MAİN BANNER */
+
+/* CURRENCY AND CREDİT */
+
+/* CURRENCY */
+.container .currency-credit {
+    margin-bottom: 80px;
+    display: flex;
+    gap: 25px;
+}
+
+.container .currency-credit .currency {
+    width: 50%;
+    background: #f1f4ee;
+    border-radius: 40px;
+    padding: 35px 40px;
+}
+
+.container .currency-credit .currency .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .currency-credit .currency .head h3 {
+    font-size: 25px;
+    font-weight: 600;
+}
+/* --------------- */
+/* SLİDER CHECKBOX */ 
+.container .currency-credit .currency .head .slider-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container .currency-credit .currency .head .slider-checkbox .cashless.active,
+.container .currency-credit .currency .head .slider-checkbox .cash.active {
+    opacity: 1;
+    transition: .4s;
+}
+
+.container .currency-credit .currency .head .slider-checkbox .cashless,
+.container .currency-credit .currency .head .slider-checkbox .cash {
+    opacity: .3;
+    font-weight: 500;
+}
+
+.container .currency-credit .currency .head .slider-checkbox .switch {
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    width: 30px;
+}
+
+.container .currency-credit .currency .head .slider-checkbox .switch input {
+    display: none;
+}
+
+.container .currency-credit .currency .head .slider-checkbox .slider {
+    background-color: #000;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.container .currency-credit .currency .head .slider-checkbox .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 10px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 10px;
+}
+
+.container .currency-credit .currency .head .slider-checkbox input:checked+.slider {
+    background-color: #000;
+}
+
+.container .currency-credit .currency .head .slider-checkbox input:checked+.slider:before {
+    transform: translateX(12px);
+}
+
+.container .currency-credit .currency .head .slider-checkbox .slider.round {
+    border-radius: 34px;
+}
+
+.container .currency-credit .currency .head .slider-checkbox .slider.round:before {
+    border-radius: 50%;
+}
+/* SLİDER CHECKBOX */
+/* --------------- */
+.container .currency-credit .currency .table table {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.container .currency-credit .currency .table table tr {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container .currency-credit .currency .table table tr td {
+    flex: 1;
+}
+
+.container .currency-credit .currency .table table tr td .fa-circle {
+    font-size: 5px;
+    position: relative;
+    bottom: 4px;
+    right: 3px;
+    opacity: .5;
+    display: none;
+}
+
+.container .currency-credit .currency .table table tr td .fa-caret-down {
+    color: #EC2828;
+    position: relative;
+    right: 3px;
+    display: none;
+}
+
+.container .currency-credit .currency .table table tr td .fa-caret-up {
+    color: rgb(40, 216,10);
+    position: relative;
+    right: 3px;
+    display: none;
+}
+
+.container .currency-credit .currency .currency-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .currency-credit .currency .currency-btn p {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.container .currency-credit .currency .currency-btn button {
+    padding: 10px 15px;
+    color: #fafafa;
+    border: none;
+    outline: none;
+    background: #80b554;
+    border-radius: 10px;
+    font-weight: bold;
+}
+/* CURRENCY */
+
+/* CREDIT */
+.container .currency-credit .credit {
+    width: 50%;
+    background: #f1f4ee;
+    border-radius: 40px;
+    padding: 35px 40px;
+}
+
+.container .currency-credit .credit .calculator {
+    height: 100%;
+}
+
+.container .currency-credit .credit .calculator form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .currency-credit .credit .calculator .heading h2 {
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.container .currency-credit .credit .calculator .values .first-value {
+    margin-bottom: 15px;
+}
+
+.container .currency-credit .credit .calculator .values .first-value .displayed small,
+.container .currency-credit .credit .calculator .values .bottom .displayed small {
+    font-size: 11px;
+    color: #888888;
+    font-weight: bold;
+}
+
+.container .currency-credit .credit .calculator .values .first-value .displayed .cal-input,
+.container .currency-credit .credit .calculator .values .bottom .displayed .cal-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container .currency-credit .credit .calculator .values .first-value .displayed .cal-input input::-webkit-outer-spin-button,
+.container .currency-credit .credit .calculator .values .first-value .displayed .cal-input input::-webkit-inner-spin-button,
+.container .currency-credit .credit .calculator .values .bottom .displayed .cal-input input::-webkit-outer-spin-button,
+.container .currency-credit .credit .calculator .values .bottom .displayed .cal-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.container .currency-credit .credit .calculator .values .first-value .displayed .cal-input input[type=number],
+.container .currency-credit .credit .calculator .values .bottom .displayed .cal-input input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.container .currency-credit .credit .calculator .values .first-value .displayed .cal-input input {
+    width: 100%;
+    padding: 10px 15px;
+    background: #fafafa;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 6px;
+    font-size: 15px;
+}
+
+.container .currency-credit .credit .calculator .values .bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.container .currency-credit .credit .calculator .values .bottom .value {
+    width: 100%;
+}
+
+.container .currency-credit .credit .calculator .values .bottom .displayed .cal-input input {
+    width: 100%;
+    padding: 10px 15px;
+    background: #fafafa;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 6px;
+    font-size: 15px;
+}
+
+.container .currency-credit .credit .calculator .values .first-value .displayed .cal-input span,
+.container .currency-credit .credit .calculator .values .bottom .displayed .cal-input span {
+    position: absolute;
+    right: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.container .currency-credit .credit .calculator .values .first-value .rangeslider,
+.container .currency-credit .credit .calculator .values .bottom .value .rangeslider {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    top: 0;
+    height: 6px;
+}
+
+.container .currency-credit .credit .calculator .values .first-value .rangeslider .rangeslider__fill,
+.container .currency-credit .credit .calculator .values .bottom .value .rangeslider .rangeslider__fill {
+    background: #80b554;
+}
+
+.container .currency-credit .credit .calculator .values .first-value .rangeslider .rangeslider__handle,
+.container .currency-credit .credit .calculator .values .bottom .value .rangeslider .rangeslider__handle {
+    width: 20px;
+    height: 20px;
+    border: 5px solid #000;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container .currency-credit .credit .calculator .results .result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .currency-credit .credit .calculator .results .result .result-value {
+    display: flex;
+    align-items: center;
+}
+
+.container .currency-credit .credit .calculator .results .result .result-value .resultText {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.container .currency-credit .credit .calculator .results .result .result-value #monthlyResultEl {
+    margin: 0 2px 0 10px;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.container .currency-credit .credit .calculator .results .result .result-value span {
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.container .currency-credit .credit .calculator .results .result #calculateBtn {
+    padding: 10px 15px;
+    color: #fafafa;
+    background: #80b554;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.container .currency-credit .credit .calculator .results .result #calculateBtn:hover {
+    background: hsl(93, 40%, 48%);
+}
+/* CREDIT */
+
+/* CURRENCY AND CREDİT */

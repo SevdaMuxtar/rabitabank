@@ -1,0 +1,605 @@
+/* --------------------------------- BANNER --------------------------------- */
+.container .banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 60px 0;
+    background: #def4cd;
+    border-radius: 40px;
+}
+
+.container .banner .left {
+    width: 60%;
+}
+
+.container .banner .left h3 {
+    color: #000;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.container .banner .left p {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.container .banner .right {
+    width: 40%;
+}
+
+.container .banner .right .img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.container .banner .right .img img {
+    object-fit: cover;
+    width: 50%;
+}
+/* --------------------------------- BANNER --------------------------------- */
+
+/* -------------------------------- FEATURES -------------------------------- */
+.container .features .head h3 {
+    font-size: 25px;
+    color: #3a3a3a;
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+.container .features .fearures-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.container .features .fearures-icon .features-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.container .features .fearures-icon .features-card .icon {
+    width: 35px;
+    height: 35px;
+    background: #80b554;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fafafa;
+    font-size: 20px;
+}
+
+.container .features .fearures-icon .features-card .context .top {
+    color: #888888;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.container .features .fearures-icon .features-card .context .bottom {
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.container .features .content {
+    padding: 35px;
+    background: #f1f4ee;
+    border-radius: 30px;
+    margin: 50px 80px;
+}
+
+.container .features .content h3 {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.container .features .content .detail {
+    font-weight: 300;
+}
+
+.container .features .content .more-detail {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.container .features .content .link {
+    font-weight: 300;
+}
+
+.container .features .content .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .features .content .head .buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.container .features .content .head .buttons .buttons-link {
+    padding: 10px 15px;
+    color: #000;
+    font-weight: 400;
+    background: #fff;
+    opacity: 1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .features .content .head .buttons .buttons-link.active {
+    background: #80b554;
+    color: #fafafa;
+}
+
+.container .features .content .table {
+    margin-top: 20px;
+}
+
+.container .features .percent-value.active {
+    display: block;
+}
+
+.container .features .percent-value {
+    display: none;
+}
+
+.container .features .content .table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+
+}
+
+.container .features .content .table table tr {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.container .features .content .table table tr td {
+    padding: 12px;
+    width: 25%;
+}
+
+.container .features .content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.container .features .content table tr {
+    border-top: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.container .features .content table tr td:first-child {
+    width: 25%;
+    padding: 12px 12px 12px 0;
+}
+
+.container .features .content table tr td:last-child {
+    padding: 12px 0px 12px 12px;
+}
+/* -------------------------------- FEATURES -------------------------------- */
+
+/* --------------------------- DEPOSIT CALCULATOR --------------------------- */
+.container .deposit-calculator {
+    background: hsl(210, 9%, 94%);
+    padding: 40px;
+    border-radius: 30px;
+}
+
+.container .deposit-calculator .head h3 {
+    font-size: 28px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.container .deposit-calculator .content {
+    display: flex;
+    align-items: center;
+}
+
+.container .deposit-calculator .content .left {
+    width: 50%;
+}
+
+.container .deposit-calculator .content .left .title {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+
+.container .deposit-calculator .content .left ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.container .deposit-calculator .content .left .currency ul {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: max-content;
+    border-radius: 20px;
+}
+
+.container .deposit-calculator .content .left .currency ul li a {
+    background: transparent;
+    display: inline-block;
+    width: 55px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .deposit-calculator .content .left .currency ul li a.active {
+    background: #fff;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+.container .deposit-calculator .content .left .deposit-duration ul,
+.container .deposit-calculator .content .left .pay ul {
+    gap: 20px;
+}
+
+.container .deposit-calculator .content .left .deposit-duration ul li a,
+.container .deposit-calculator .content .left .pay ul li a {
+    background: #fff;
+    color: #000;
+    padding: 7px 17px;
+    border-radius: 30px;
+    opacity: 1;
+    font-size: 16px;
+    display: inline-block;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.container .deposit-calculator .content .left .deposit-duration ul li a.active,
+.container .deposit-calculator .content .left .pay ul li a.active {
+    background: #80b554;
+    color: #fff;
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .rangeslider{
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    top: 0;
+    height: 6px;
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .rangeslider .rangeslider__fill {
+    background: #80b554;
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .rangeslider .rangeslider__handle{
+    width: 20px;
+    height: 20px;
+    border: 5px solid #000;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value {
+    width: 70%;
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .displayed small {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .displayed .cal-input {
+    position: relative;
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .displayed .cal-input input {
+    width: 100%;
+    padding: 10px 15px;
+    background: #fafafa;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .displayed .cal-input input::-webkit-outer-spin-button,
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .displayed .cal-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .displayed .cal-input input[type=number],
+.container .currency-credit .credit .calculator .values .bottom .displayed .cal-input input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.container .deposit-calculator .content .left .deposit-value .calculator .values .first-value .displayed .cal-input span {
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.container .deposit-calculator .content .right {
+    padding: 40px 48px;
+    background: #fff;
+    border-radius: 40px;
+    width: 50%;
+}
+
+.container .deposit-calculator .content .right .title h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #000;
+    font-weight: 500;
+}
+
+.container .deposit-calculator .content .right .value {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
+}
+
+.container .deposit-calculator .content .right .value .total-percent .head,
+.container .deposit-calculator .content .right .value .monthly .head,
+.container .deposit-calculator .content .right .value .percent-degree .head {
+    color: #888;
+    font-size: 15px;
+}
+
+.container .deposit-calculator .content .right .value .total-percent #head-value,
+.container .deposit-calculator .content .right .value .percent-degree #percent-degree-value {
+    font-size: 28px;
+    color: #000;
+    font-weight: bold;
+}
+
+.container .deposit-calculator .content .right .value .monthly #monthly-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #80b554;
+}
+
+.container .deposit-calculator .content .right hr {
+    margin: 20px 0;
+    opacity: .2;
+}
+
+.container .deposit-calculator .content .right .result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .deposit-calculator .content .right .result .head {
+    color: #888;
+    font-size: 15px;
+}
+
+.container .deposit-calculator .content .right .result #result-deposit-value,
+.container .deposit-calculator .content .right .result div span {
+    font-size: 20px;
+}
+
+.container .deposit-calculator .content .right .result div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* --------------------------- DEPOSIT CALCULATOR --------------------------- */
+
+/* -------------------------- ONLİNE DEPOSİT OREDER ------------------------- */
+.container .online-deposit-order {
+    padding: 40px 48px;
+    background: #f3f4f5;
+    border-radius: 40px;
+    margin-top: 50px;
+}
+
+.container .online-deposit-order .head h3 {
+    font-size: 26px;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+
+.container .online-deposit-order .head p {
+    font-weight: 300;
+    color: #000;
+    font-size: 16px;
+}
+
+.container .online-deposit-order .second {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 16px;
+}
+
+.container .online-deposit-order .second label {
+    color: #888888;
+    font-size: 12px;
+}
+
+.container .online-deposit-order .second .name,
+.container .online-deposit-order .second .surname,
+.container .online-deposit-order .second .number {
+    width: 33%;
+}
+
+.container .online-deposit-order .second .number label {
+    position: relative;
+    top: 6px;
+}
+
+.container .online-deposit-order .second .number input {
+    margin-top: 9px;
+}
+
+.container .online-deposit-order .second input {
+    background: #fafafa;
+    border: 1.5px solid #888888a4;
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+}
+
+.container .online-deposit-order .second label span {
+    color: #de3a42;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+}
+
+.container .online-deposit-order .important-text {
+    display: flex;
+    gap: 3px;
+}
+
+.container .online-deposit-order .important-text p {
+    color: #de3a42;
+    font-size: 14px;
+}
+
+.container .online-deposit-order .important-text .star {
+    font-size: 23px;
+    position: relative;
+    top: -3px;
+}
+
+.container .online-deposit-order .button button {
+    border: none;
+    outline: none;
+    color: #fafafa;
+    background: #80b554;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+/* -------------------------- ONLİNE DEPOSİT ORDER -------------------------- */
+
+/* -------------------------------- EMANETLER ------------------------------- */
+.container .e-head-title {
+    margin: 50px 0 30px;
+}
+
+.container .e-head-title h1 {
+    color    : #3a3a3a;
+    font-size: var(--fs-extra-large);
+}
+
+.container .slidersx {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+    width: 100%;
+    gap: 20px;
+}
+
+.container .slidersx .slide {
+    position: relative;
+    padding: 40px;
+    opacity: 1;
+    background: #f1f4ee;
+    border-radius: 40px;
+}
+
+.container .slidersx .slide .slide-content .title h2 {
+    font-size: var(--fs-large);
+    margin-bottom: 16px;
+}
+
+.container .slidersx .slide .slide-content .title-content p {
+    font-size: var(--fs-small);
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+
+.container .slidersx .slide .slide-content .percent {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.container .slidersx .slide .slide-content .percent .l-percent p:nth-child(1),
+.container .slidersx .slide .slide-content .percent .r-percent p:nth-child(1),
+.container .slidersx .slide .slide-content .currency p:nth-child(1) {
+    font-size: var(--fs-small);
+    font-weight: 300;
+    opacity: .6;
+}
+
+.container .slidersx .slide .slide-content .percent .l-percent p:nth-child(2),
+.container .slidersx .slide .slide-content .percent .r-percent p:nth-child(2),
+.container .slidersx .slide .slide-content .currency p:nth-child(2) {
+    font-size: var(--fs-medium);
+    font-weight: 600;
+}
+
+.container .slidersx .slide .slide-img {
+    width: 100%;
+}
+
+.container .slidersx .slide .slide-img img {
+    position: absolute;
+    width: 30%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    bottom: 0;
+    right: 0;
+    transition: .3s;
+    border-bottom-right-radius: 40px;
+}
+
+.container .slidersx .slide .read-more span {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: #000;
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    visibility: hidden;
+}
+
+.container .slidersx .slide:hover .read-more span {
+    visibility: visible;
+}
+
+.container .slidersx .slide:hover .slide-img img {
+    width: 35%;
+}
+
+.container .slidersx .slide .read-more span i {
+    color: #fafafa;
+    font-size: var(--fs-medium);
+}
+/* -------------------------------- EMANETLER ------------------------------- */

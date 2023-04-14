@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- -------------------------------- ICON --------------------------------- -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <!-- -------------------------------- ICON --------------------------------- -->
+
+    <!-- ----------------------------- FONTAWESOME ----------------------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+    <!-- ----------------------------- FONTAWESOME ----------------------------- -->
+
+    <!-- --------------------------------- CSS --------------------------------- -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block css %}
+
+    {% endblock %}
+    <!-- --------------------------------- CSS --------------------------------- -->
+
+    <!-- -------------------------------- TITLE -------------------------------- -->
+    {% block title %}
+
+    {% endblock %}
+    <!-- -------------------------------- TITLE -------------------------------- -->
+
+</head>
+<body>
+
+    <div class="container">
+
+        <nav>
+            <div class="first-nav">
+                <div class="left">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-building-columns"></i><span>Ümumi məlumat</span></a></li>
+                        <li><a href="#"><i class="fa-solid fa-location-dot"></i><span>Filial və bankomatlar</span></a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-moon"></i></a></li>
+                        <select name="" id="language">
+                            <option value="">AZ</option>
+                            <option value="">EN</option>
+                            <option value="">RU</option>
+                        </select>
+                    </ul>
+                </div>
+            </div>
+            <div class="second-nav">
+                <div class="left">
+                    <ul>
+                        <li><a href="/home/" class="logo">
+                            <img src="{{ url_for('static', filename='images/esas-sehife/rabitebank.svg') }}" alt="">
+                            
+                        </a></li>
+                        <li><a href="#" class="individual">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Fərdi</span>
+                        </a></li>
+                        <li><a href="#" class="business">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span>Biznes</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="tel:+994133" class="phone_number"><i class="fa-solid fa-phone"></i> <span>133</span></a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right"></i> <span>İnternet Bankçılıq</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="third-nav">
+                <div class="left">
+                    <ul>
+                        <li><a href="#">Kreditlər</a></li>
+                        <li><a href="#" class="card-menu">
+                            <img src="{{ url_for('static', filename='images/esas-sehife/menu-card-1.webp') }}" alt="">
+                            <span>Kartlar</span>
+                        </a></li>
+                        <li><a href="/ferdi-musteriler/emanetler-az/">Əmanətlər</a></li>
+                        <li><a href="#" class="dots-menu" onclick="showMenu()"><i class="fa-solid fa-ellipsis"></i></a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="#" class="search-icon">
+                            <i class="fa-solid fa-magnifying-glass" onclick="hideSearchInput()"></i>
+                            <input id="search-input" type="text" placeholder="Axtarış et" class="hide">
+                        </a></li>
+                        <li><a href="/online-queue/" class="online-queue"><i class="fa-solid fa-calendar-days"></i> <span>Online növbə</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="menus" class="menus hide">
+                <div class="main-links">
+                    <div class="top-links">
+                        <div class="credit">
+                            <div class="top">
+                                <a class="hover-menu-head" href="№"><h3>Kreditlər</h3></a>
+                                <ul>
+                                    <li><a href="#">Nağd pul krediti</a></li>
+                                    <li><a href="#">İpoteka krediti</a></li>
+                                    <li><a href="#">Lombard krediti</a></li>
+                                    <li><a href="#">"MİDA" xətti ilə güzəştli ipoteka</a></li>
+                                    <li><a href="#">Bütün kreditler</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cards">
+                            <div class="top">
+                                <a class="hover-menu-head" href="№"><h3>Kartlar</h3></a>
+                                <ul>
+                                    <li><a href="#">Kartmane Debet</a></li>
+                                    <li><a href="#">Kartmane Kredit</a></li>
+                                    <li><a href="#">Kartmane Premium</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="money-transfer">
+                            <div class="top">
+                                <a class="hover-menu-head" href="№"><h3>Pul köçürmələri</h3></a>
+                                <ul>
+                                    <li><a href="#">Westerm Union</a></li>
+                                     <li><a href="#">Zolotoya Korona</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Barat</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="online-quere">
+                            <div class="top">
+                                <a class="hover-menu-head" href="№"><h3>Onlayn xidmətlər</h3></a>
+                                <ul>
+                                    <li><a href="#">Kredit sifarişi</a></li>
+                                    <li><a href="/ferdi/kartlar/kartmane-debet/">Kartmane Debet sifarişi</a></li>
+                                    <li><a href="#">Kartmane Kredit sifarişi</a></li>
+                                    <li><a href="#">Onlayn ödənişləri</a></li>
+                                    <li><a href="#">Kredit ödənişi</a></li>
+                                    <li><a href="#">SMS məlumatlandırma</a></li>
+                                    <li><a href="/online-queue/">Onlayn növbə</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="other-servieces">
+                            <div class="top">
+                                <a class="hover-menu-head" href="№"><h3>Digər xidmətlər</h3></a>
+                                <ul>
+                                    <li><a href="#">Sürətli pul köçürmələr</a></li>
+                                    <li><a href="#">Hesablaşma-kassa əməliyyatları</a></li>
+                                    <li><a href="#">Saxlanc seyfləri</a></li>
+                                    <li><a href="#">Sığorta xidmətləri</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-links">
+                        <ul>
+                            <li><a class="hover-menu-head" href="/ferdi/kampaniyalar/"><h3>Kampaniyalar</h3></a></li>
+                            <li><a class="hover-menu-head" href="№"><h3>Xidmət şəbəkəsi</h3></a></li>
+                            <li><a class="hover-menu-head" href="№"><h3>Tərəfdaşlar</h3></a></li>
+                            <li><a class="hover-menu-head" href="/xeberler/"><h3>Xəbərlər</h3></a></li>
+                            <li><a class="hover-menu-head" href="№"><h3>Rabita Mobile</h3></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="other-links">
+                    <a class="hover-menu-head" href="№"><h3>Tender elanları</h3></a>
+                    <a class="hover-menu-head" href="№"><h3>Apple Pay</h3></a>
+                    <a class="hover-menu-head" href="№"><h3>Rabita Bot</h3></a>
+                    <a class="hover-menu-head" href="№"><h3>Keşbek</h3></a>
+                    <a class="hover-menu-head" href="№"><h3>Təhlükəsizlik</h3></a>
+                    <a class="hover-menu-head" href="№"><h3>NFC</h3></a>
+                    <a class="hover-menu-head" href="№"><h3>Bloq</h3></a>
+                    <a class="hover-menu-head" href="№"><h3>Goole Payᵀᴹ</h3></a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="layer" class="layer hide"></div>
+
+        {% block content %}
+    
+        {% endblock %}
+
+        <footer>
+            <div class="footer-links">
+                <div class="links">
+                    <div class="link-card">
+                        <h3>Fərdi müştərilər</h3>
+                        <a href="#">Kartmane</a>
+                        <a href="#">Kreditlər</a>
+                        <a href="#">Əmanətlər</a>
+                        <a href="#">Saxlanc seyfləri</a>
+                        <a href="#">Onlayn xidmətlər</a>
+                        <a href="#">Pul köçürmələri</a>
+                        <a href="#">Kampaniyalar</a>
+                        <a href="#">Xidmət şəbəkəsi</a>
+                    </div>
+                    <div class="link-card">
+                        <h3>Biznes müştərilər</h3>
+                        <a href="#">Əmanətlər</a>
+                        <a href="#">Kreditlər</a>
+                        <a href="#">Plastik kartlar</a>
+                        <a href="#">Bank xidmətləri</a>
+                        <a href="#">Xidmət şəbəkəsi</a>
+                        <a href="#">Kampaniyalar</a>
+                    </div>
+                    <div class="link-card">
+                        <h3>Bank haqqında</h3>
+                        <a href="#">Ümumi məlumat</a>
+                        <a href="#">Rəhbərlik</a>
+                        <a href="#">Təşkilati struktur</a>
+                        <a href="#">Banklararası biznes</a>
+                        <a href="#">Hesabatlar</a>
+                        <a href="#">Şikayət və təkliflər</a>
+                        <a href="#">Xəbərlər və Elanlar</a>
+                        <a href="#">Tender elanları</a>
+                        <a href="#">Bloq</a>
+                        <a href="#">F.A.Q</a>
+                        <a href="#">Məxfilik Siyasəti</a>
+                    </div>
+                    <div class="link-card">
+                        <h3>İnvestorlarla əlaqə</h3>
+                        <a href="#">Risklərin idarə edilməsi</a>
+                        <a href="#">Çirkli pulların yuyulmasına qarşı fəaliyyət</a>
+                        <a href="#">Yükləmələr və dəstək</a>
+                    </div>
+                    <div class="link-card">
+                        <h3>İnsan resursları</h3>
+                        <a href="#">Ümumi məlumat</a>
+                        <a href="#">Vakansiyalar</a>
+                    </div>
+                </div>
+                <div class="location">
+                    <h3>Baş ofis</h3>
+                    <a href="https://goo.gl/maps/j8iGmbjeSm9T8Lbr9">Azərbaycan, Bakı şəh., AZ 1010, 28 May küç. 33</a>
+                    <a href="tel:994775783030">Tel.: (994 12) 598 44 88</a>
+                    <a href="fax:994775783030">Fax.: (994 12) 598 44 88</a>
+                    <a href="telex:142453">Teleks: 142453 RSKBAI</a>
+                    <a href="mailto:akhbvr@gmail.com">133@rabitabank.com</a>
+                </div>
+            </div>
+            <div class="social-media">
+                <div class="app">
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-apple"></i><span>App Store</span></a></li>
+                        <li><a href="#"><i class="fa-brands fa-google-play"></i><span>Google Play</span></a></li>
+                    </ul>
+                </div>
+                <div class="social-media-link">
+                    <ul class="all-link">
+                        <li><a href="#" class="contact-btn"><i class="fa-regular fa-envelope-open"></i><span>Bizə yazın</span></a></li>
+                        <li><a href="#" class="contact-btn"><i class="fa-solid fa-phone"></i><span>Zəng sifariş edin</span></a></li>
+                        <li class="text">Bizi izləyin</li>
+                        <ul class="social-media-links">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="about">
+                <div class="left">
+                    <p>Rabitəbank ASC Azərbaycan Mərkəzi Bankın 136 saylı lisenziyası <br> əsasında fəaliyyət göstərir. © Rabitəbank 2022</p>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="#">
+                            <img src="{{ url_for('static', filename='images/footer/Logo.svg') }}" alt="">
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>

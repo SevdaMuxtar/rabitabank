@@ -1,0 +1,517 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/rangeslider.js-2.3.0/rangeslider.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='js/vendor/slick/slick.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='js/vendor/slick/slick-theme.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/card-order.css') }}">
+
+{% endblock %}
+
+
+{% block title %}
+
+<title>Kartmane Debet / Kartlar / Fərdi - Rabitəbank</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="banner">
+            <div class="content">
+                <div class="context">
+                    <h3>Kartmane Debit</h3>
+                    <p>Kartmane ilə xərclədikcə qazan!</p>
+                    <button>Sifariş et</button>
+                </div>
+                <div class="img">
+                    <img src="{{ url_for('static', filename='images/kart-sifarisi/group-7394.webp') }}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="kart-order-category">
+            <ul>
+                <li><a onclick="cardOrderCategory(this)" class="card-order-c-l active" href="#">Kart haqqında</a></li>
+                <li><a onclick="cardOrderCategory(this)" class="card-order-c-l" href="#">Tariflər və Limitlər</a></li>
+                <li><a onclick="cardOrderCategory(this)" class="card-order-c-l" href="#">Sual-cavab</a></li>
+                <li><a onclick="cardOrderCategory(this)" class="card-order-c-l" href="#">Əlavə məlumatlar</a></li>
+            </ul>
+        </div>
+
+        <div class="features">
+            <div class="head">
+                <h3>Xüsusiyyətləri</h3>
+            </div>
+            <div class="fearures-icon">
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-sharp fa-solid fa-euro-sign"></i></div>
+                    <div class="context">
+                        <p class="top">Qiymət</p>
+                        <p class="bottom">İllik xidmət haqqı - 10 AZN. <br> İlkin mədaxil ilə PULSUZ</p>
+                    </div>
+                </div>
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-regular fa-clock"></i></div>
+                    <div class="context">
+                        <div class="top">KEŞBEK</div>
+                        <div class="bottom">Partnyorlardan 40%-dək keşbek</div>
+                    </div>
+                </div>
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-regular fa-percent"></i></div>
+                    <div class="context">
+                        <div class="top">Kartdakı qalığa gəlir</div>
+                        <div class="bottom">4% AZN | 0.25% USD | 0% EUR</div>
+                    </div>
+                </div>
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="context">
+                        <div class="top">Müddət</div>
+                        <div class="bottom">5 İllik</div>
+                    </div>
+                </div>
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-sharp fa-solid fa-euro-sign"></i></div>
+                    <div class="context">
+                        <p class="top">Pulsuz nağdlaşdırma</p>
+                        <p class="bottom">ayda 5 dəfə istənilən ATM-də</p>
+                    </div>
+                </div>
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-regular fa-clock"></i></div>
+                    <div class="context">
+                        <div class="top">Valyuta</div>
+                        <div class="bottom">AZN / USD / EUR</div>
+                    </div>
+                </div>
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-regular fa-percent"></i></div>
+                    <div class="context">
+                        <div class="top">Rabita Mobile</div>
+                        <div class="bottom">Pulsuz, asan və rahat mobil tətbiq istifadəsi</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="banner-2">
+            <div class="context">
+                <h3>Partnyorlardan 40%-dək keşbek</h3>
+                <p>Kartmane ilə xərclədikcə qazan!</p>
+            </div>
+            <div class="img">
+                <img src="{{ url_for('static', filename='images/kart-sifarisi/296909291-806009804144375-8269545717492437517-n.png') }}" alt="">
+            </div>
+            <div class="btn">
+                <button>Daha ətraflı</button>
+            </div>
+        </div>
+
+        <div class="card-order-calculator">
+            <div class="content">
+                <div class="left">
+
+                    <div class="head">
+                        <h3>Kartdakı qalığa gəlirinizi hesablayın</h3>
+                    </div>
+
+                    <div class="slider-checkbox">
+                        <label for="" id="cashless" class="cashless cs-label active">Sadə</label>
+                        <label class="switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" onclick="checkboxSlider()" />
+                            <div class="slider round"></div>
+                        </label>
+                        <label for="" id="cash" class="cash cs-label">Premium</label>
+                    </div>
+
+                    <div class="card-order-value">
+
+                        <div class="calculator">
+                            <div class="values">
+                                <div class="first-value">
+                                    <div class="displayed">
+                                        <small>Əmanət məbləği</small>
+                                        <div class="cal-input">
+                                            <input id="credit-value" class="valueInput" type="number" min="20000" max="1000000" value="20000" step="1000" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "7">
+                                            <span>AZN</span>
+                                        </div>
+                                    </div>
+                                    <input id="inputSlider-1" class="inputSlider" type="range" name="monthInputEl" id="monthInputEl"
+                                        min="20000" max="1000000" value="20000" step="1000">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="note">
+                        <p>*Faiz hesablanacaq maksimal məbləğ Sadə üzrə 10 000 AZN/USD, Premium üzrə 50 000 AZN/USD -dir.</p>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <div class="value">
+                        <div class="total-percent">
+                            <p class="head">Ümumi faiz gəliri</p>
+                            <p id="head-value">400</p>
+                        </div>
+                        <div class="percent-degree">
+                            <p class="head">Faiz dərəcəsi</p>
+                            <p id="percent-degree-value">4%</p>
+                        </div>
+                    </div>
+
+                    <div class="about">
+                        <p>Hər ayın sonu kartdakı məbləğə əlavə olunan gəlirlə qazancınız daha çox olacaq!</p>
+                    </div>
+
+                    <div class="button">
+                        <button>Sifariş et</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        {% macro messagex(error) %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+            {% if category == 'error' %}
+            <ul class="error-ul">
+            {% for category, message in messages %}
+                <li>{{message}}</li>
+            {% endfor %} 
+            </ul>
+            {% elif category == 'success' %}
+            <ul class="success-ul">
+            {% for category, message in messages %}
+                <li>{{message}}</li>
+            {% endfor %} 
+            </ul>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
+    {% endwith %}
+        {% endmacro %}
+        <div class="card-order-form">
+            <div class="deposit-form">
+                <div class="title">
+                    <h3>Kartmane Debet sifariş edin</h3>
+                    <p>Üstünlüklərlə yaşa!</p>
+                </div>
+                <div class="form">
+                    
+                    <form method="POST">
+                        {{ csrf_token }}
+
+                        <div class="errors">
+                            {{messagex()}}
+                        </div>
+                        <div class="first">
+                            <div class="visa">
+                                <div class="title">
+                                    <p>Kartın növü</p>
+                                </div>
+                                <div class="buttons">
+                                    <input id="card_type" name="card_type" type="text" hidden>
+                                    {% for card_type in card_types %}
+                                    <button class="img card-type-link" type="button" name="{{card_type.id}}" onclick="cardTypeLink(this)">
+                                        <img style="width: 30px;" src="{{ url_for('static', filename='media/card_order_icon/'+card_type.image_path) }}" alt="">
+                                    </button>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="currency">
+                                <p class="title">Valyutası</p>
+                                <ul class="currency-ul">
+                                    <input id="card_currency" name="card_currency" type="text" hidden>
+                                    {% for card_currency in card_currencies %}
+                                    <li>
+                                        <button type="button" name="{{card_currency.id}}" class="currency-link" onclick="currencyLink(this)">
+                                            <img style="width: 25px;" src="{{ url_for('static', filename='media/card_order_icon/'+card_currency.image_path) }}" alt="">
+                                        </button>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div class="name">
+                                <label for="">Adınız <span class="important">*</span></label>
+                                <br>
+                                <input name="firstname" type="text">
+                            </div>
+                            <div class="surname">
+                                <label for="">Soyadınız <span class="important">*</span></label>
+                                <br>
+                                <input name="surname" type="text">
+                            </div>
+                            <div class="number">
+                                <label for="">Saxlanc seyfləri</label>
+                                <br>
+                                <input type="tel" name="phone" id="phone" placeholder="(050) 123-45-67" autocomplete="tel" maxlength="15" class="form-control" pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{2}-[0-9]{2}" required />
+                            </div>
+                            <div class="surname">
+                                <label for="">Şəxsiyyət vəsiqənizin FİN nömrəsi <i class="fa-solid fa-circle-question">
+                                    <div class="fin-code">
+                                        <div class="old">
+                                            <ul>
+                                                <li>Köhnə tip şəxsiyyət vəsiqəsi</li>
+                                                <li><img src="{{ url_for('static', filename='images/kart-sifarisi/fin-old.png') }}" alt=""></li>
+                                            </ul>
+                                        </div>
+                                        <hr>
+                                        <div class="new">
+                                            <ul>
+                                                <li>Yeni tip şəxsiyyət vəsiqəsi</li>
+                                                <li><img src="{{ url_for('static', filename='images/kart-sifarisi/fin-new.webp') }}" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </i></label>
+                                <br>
+                                <input name="pid_code" type="text">
+                            </div>
+                        </div>
+                        <div class="third">
+                            <span class="important">*</span>
+                            <span class="important">Məlumatları Azərbaycan dilində daxil edin.</span>
+                        </div>
+                        <div class="submit">
+                            <button>Sifariş et</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="step-image">
+                <div class="step">
+                    <ul>
+                        <li><a href=""><span class="number">1</span>Şəxsi məlumatlar</a></li>
+                        <li><a class="deactive dash">----</a></li>
+                        <li><a href="" class="deactive"><span class="number">2</span>Çatdırılma</a></li>
+                    </ul>
+                </div>
+                <div class="img">
+                    <img src="{{ url_for('static', filename='images/kart-sifarisi/form-card-image.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-order-sliders-head">
+            <h3>Kart xidmətləri</h3>
+        </div>
+
+        <div class="card-order-sliders">
+            <a href="">
+                <div class="slide">
+                    <h3>PIN WEB</h3>
+                    <p>
+                        PIN delivery WEB – ŞEN kodun Rabitəbankın WEB səhifəsi vasitəsilə təyin edilməsi.
+                        PIN Web - keçid linki
+                        PIN Web - təlimat</p>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="slide">
+                    <h3>SMS xəbərdarlıq</h3>
+                    <p>
+                        Rabitəbank müştəriləri öz kart əməliyyatları haqda məlumatı banka və ya bankomata müracət etmədən ala bilər. Xidmətə qoşulan müştərinin mobil telefonuna kart hesabı üzrə apardığı əməliyyat barədə 24</p>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="slide">
+                    <h3>3D Secure</h3>
+                    <p>
+                        3D Secure – VISA və MasterCard beynəlxalq ödəniş sistemləri tərəfindən yaradılmış, ödəniş kartları ilə onlayn alış-veriş əməliyyatlarını daha da təhlükəsiz edən qlobal protokoldur. </p>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="slide">
+                    <h3>Card to Card</h3>
+                    <p>
+                        Rabitəbankın kartları ilə istənilən vaxt  Kartdan karta (“Card to Card”) xidmətindən istifadə edə bilərsiniz
+                        RB kartlarına - Pulsuz (MB APP, İB, BOT kanallar vasitəsilə)
+                        RB kartlarına -</p>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="slide">
+                    <h3>Bla Bla 5</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, odio. Nesciunt facere laboriosam repudiandae nostrum quis dolorum, qui sed unde neque sapiente illum culpa perferendis necessitatibus animi quisquam accusantium officiis.</p>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="slide">
+                    <h3>PIN Change & Erase</h3>
+                    <p>
+                        Rabita Mobile tətbiqindən istifadə etməklə PIN Change və PIN Erase xitmətlərindən yararlana bilərsiz. Bu xidmətlər pulsuzdur.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="other-card-head">
+            <h3>Digər kartlar</h3>
+        </div>
+
+        <div class="other-cards">
+            <div class="card">
+                <div class="content">
+                    <div>
+                        <h3>Kartmane Kredit</h3>
+                        <p>100 gün güzəşt müddəti ilə indi al, sonra ödə!</p>
+                    </div>
+                    <button>Sifariş et</button>
+                </div>
+                <div class="img">
+                    <img src="{{ url_for('static', filename='images/kart-sifarisi/296909291-806009804144375-8269545717492437517-n.png') }}" alt="">
+                </div>
+            </div>
+            <div class="card premium">
+                <div class="content">
+                    <h3>Kartmane Kredit</h3>
+                    <p>100 gün güzəşt müddəti ilə indi al, sonra ödə!</p>
+                    <button>Sifariş et</button>
+                </div>
+                <div class="img">
+                    <img src="{{ url_for('static', filename='images/kart-sifarisi/296909291-806009804144375-8269545717492437517-n.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+
+
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/vendor/slick/slick.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/vendor/rangeslider.js-2.3.0/rangeslider.min.js') }}"></script>
+
+
+    <script>
+        var checkboxSliderInput = document.getElementById("checkbox")
+        var chekcboxSliderLabel = document.querySelectorAll(".cs-label")
+        var cash = document.getElementById("cash")
+        var cashless = document.getElementById("cashless")
+        
+        var currencyLinkList = document.querySelectorAll(".currency-link")
+        var cardTypeList = document.querySelectorAll(".card-type-link")
+
+
+        document.getElementById('phone').addEventListener('input', function (e) {
+            var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '')+ (x[4] ? '-' + x[4] : '');
+            console.log(x)
+        });
+
+
+        function currencyLink(e) {
+            document.getElementById("card_currency").setAttribute('value', e.getAttribute('name'))
+            currencyLinkList.forEach(element => {
+                element.classList.remove("active")
+            });
+            e.classList.add("active")
+        }
+
+        function cardTypeLink(e) {
+            document.getElementById("card_type").setAttribute('value', e.getAttribute('name'))
+            cardTypeList.forEach(element => {
+                element.classList.remove("active")
+            });
+            e.classList.add("active")
+        }
+
+
+        $('.card-order-sliders').slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: true,
+            arrows: false,
+            slidesToShow: 4
+        });
+
+        function checkboxSlider() {
+        chekcboxSliderLabel.forEach(element => {
+            element.classList.remove("active")
+        });
+        if(checkboxSliderInput.checked === false) {
+            cashless.classList.add("active")
+        }else {
+            cash.classList.add("active")
+        }
+        }
+        var kampaniyaCategoryList = document.querySelectorAll(".card-order-c-l")
+        
+        function cardOrderCategory(e) {
+                kampaniyaCategoryList.forEach(element => {
+                    element.classList.remove("active")
+                });
+                e.classList.add("active")
+        }
+
+        var $element = $('.inputSlider');
+        $element
+            .rangeslider({
+            polyfill: false
+            })
+
+        for (let slider of document.querySelectorAll(".rangeslider__handle")) {
+            slider.addEventListener("mouseenter", () => {
+            $element.rangeslider({})
+                .on('input', function () {
+                    if (slider.parentElement.id === "js-rangeslider-0") {
+                        if (this.id === "inputSlider-1") {
+                        var creditValue = parseInt(this.value)
+                        document.querySelector("#credit-value").value = creditValue
+                    }
+                }
+                calculateResults()
+                
+                });
+            })
+
+        }
+
+        var creditVAlueInputx = document.getElementById("credit-value")
+        creditVAlueInputx.addEventListener("input", () => {
+            calculateResults()
+        })
+
+        calculateResults()
+
+        function calculateResults() {
+        var creditValueInput = document.querySelector("#credit-value").value
+
+            creditValueInput = parseInt(creditValueInput)
+            totalPercentValue = Math.floor(creditValueInput / 50)
+            monthlyPercent = Math.floor(totalPercentValue / 3)
+            totalResultValue = Math.floor(creditValueInput);
+
+            updateUI()
+        }
+
+        function updateUI() {
+            document.getElementById("head-value").innerText = `${totalPercentValue} AZN`
+        }
+    </script>
+    
+{% endblock %}

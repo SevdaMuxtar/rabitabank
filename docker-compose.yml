@@ -1,0 +1,23 @@
+ # Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "123"
+      MYSQL_DATABASE: "rabita-bank"
+    volumes:
+      - ./mydb:/var/lib/mysql
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

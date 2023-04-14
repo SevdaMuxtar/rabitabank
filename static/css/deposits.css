@@ -1,0 +1,342 @@
+/* -------------------------------- EMANETLER ------------------------------- */
+.container .e-head-title h1 {
+    color    : #3a3a3a;
+    font-size: var(--fs-extra-large);
+}
+
+.container .slidersx {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+    width: 100%;
+    gap: 20px;
+}
+
+.container .slidersx .slide {
+    position: relative;
+    padding: 40px;
+    opacity: 1;
+    background: #f1f4ee;
+    border-radius: 40px;
+}
+
+.container .slidersx .slide .slide-content .title h2 {
+    font-size: var(--fs-large);
+    margin-bottom: 16px;
+}
+
+.container .slidersx .slide .slide-content .title-content p {
+    font-size: var(--fs-small);
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+
+.container .slidersx .slide .slide-content .percent {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.container .slidersx .slide .slide-content .percent .l-percent p:nth-child(1),
+.container .slidersx .slide .slide-content .percent .r-percent p:nth-child(1),
+.container .slidersx .slide .slide-content .currency p:nth-child(1) {
+    font-size: var(--fs-small);
+    font-weight: 300;
+    opacity: .6;
+}
+
+.container .slidersx .slide .slide-content .percent .l-percent p:nth-child(2),
+.container .slidersx .slide .slide-content .percent .r-percent p:nth-child(2),
+.container .slidersx .slide .slide-content .currency p:nth-child(2) {
+    font-size: var(--fs-medium);
+    font-weight: 600;
+}
+
+.container .slidersx .slide .slide-img {
+    width: 100%;
+}
+
+.container .slidersx .slide .slide-img img {
+    position: absolute;
+    width: 30%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    bottom: 0;
+    right: 0;
+    transition: .3s;
+    border-bottom-right-radius: 40px;
+}
+
+.container .slidersx .slide .read-more span {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: #000;
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    visibility: hidden;
+}
+
+.container .slidersx .slide:hover .read-more span {
+    visibility: visible;
+}
+
+.container .slidersx .slide:hover .slide-img img {
+    width: 35%;
+}
+
+.container .slidersx .slide .read-more span i {
+    color: #fafafa;
+    font-size: var(--fs-medium);
+}
+/* -------------------------------- EMANETLER ------------------------------- */
+
+/* ------------------------------ SAXLANC SAFE ------------------------------ */
+.container .saxlanc-safe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 100px;
+    background: #dff2e2;
+    margin: 50px 0;
+    border-radius: 40px;
+}
+
+.container .saxlanc-safe .context {
+    flex: 1;
+}
+
+.container .saxlanc-safe .context h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.container .saxlanc-safe .context p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.container .saxlanc-safe .img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .saxlanc-safe .img img {
+    width: 200px;
+    transition: .5s;
+}
+
+.container .saxlanc-safe:hover .img img {
+    width: 230px;
+}
+
+.container .saxlanc-safe .ss-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .saxlanc-safe .ss-btn a {
+    background: #262f40;
+    padding: 10px 20px;
+    color: #fafafa;
+    font-size: 16px;
+    border-radius: 10px;
+    width: max-content;
+    opacity: 1;
+    transition: .5s;
+    border: 1px solid #262f40;
+}
+.container .saxlanc-safe .ss-btn a:hover {
+    background: #fafafa;
+    color: #262f40;
+}
+/* ------------------------------ SAXLANC SAFE ------------------------------ */
+
+/* --------------------------------- DEPOSIT -------------------------------- */
+.container .deposit {
+    display: flex;
+    gap: 40px;
+}
+
+.container .deposit .deposit-form {
+    flex: 2;
+    border-radius: 40px;
+    background: #f3f4f5;
+    padding: 50px;
+}
+
+.container .deposit .deposit-form .title {
+    margin-bottom: 40px;
+}
+
+.container .deposit .deposit-form .title h3 {
+    font-size: 26px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.container .deposit .deposit-form .title p {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.container .deposit .deposit-form .form form .form-title h3 {
+    font-size: 16px;
+    opacity: .6;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.container .deposit .deposit-form .form form .first ul {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+    gap: 15px;
+    margin-bottom: 16px;
+    justify-content: space-between;
+
+}
+
+.container .deposit .deposit-form .form form .first ul li {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #000;
+    text-align: center;
+}
+.container .deposit .deposit-form .form form .first ul li input {
+    position: absolute;
+    left: 18px;
+}
+
+.container .deposit .deposit-form .form form .first ul li label {
+    background: #000;
+    color: #fff;
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .deposit .deposit-form .form form .second {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.container .deposit .deposit-form .form form .second label {
+    color: #888888;
+    font-size: 12px;
+}
+
+.container .deposit .deposit-form .form form .second .number label {
+    position: relative;
+    top: 6px;
+}
+
+.container .deposit .deposit-form .form form .second .number input {
+    margin-top: 9px;
+}
+
+.container .deposit .deposit-form .form form .second input {
+    background: #fafafa;
+    border: 1.5px solid #888888a4;
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.container .deposit .deposit-form .form form .second label span {
+    color: #de3a42;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+}
+
+.container .deposit .deposit-form .form form .third {
+    margin-bottom: 16px;
+}
+
+.container .deposit .deposit-form .form form .third span:nth-child(1) {
+    color: #de3a42;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+}
+
+.container .deposit .deposit-form .form form .third span:nth-child(2) {
+    color: #de3a42;
+    font-size: 12px;
+}
+
+.container .deposit .deposit-form .form form .submit button {
+    background: #80b554;
+    padding: 10px 15px;
+    color: #fafafa;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    transition: .3s;
+}
+
+.container .deposit .deposit-form .form form .submit button:hover {
+    background: hsl(93, 40%, 45%);
+}
+
+.container .deposit .deposit-advertising {
+    flex: 1;
+    border-radius: 40px;
+    padding: 40px;
+    position: relative;
+}
+
+.container .deposit .deposit-advertising .content {
+    z-index: 5;
+}
+
+.container .deposit .deposit-advertising .content h3 {
+    font-size: 24px;
+    color: #fafafa;
+    margin-bottom: 16px;
+}
+
+.container .deposit .deposit-advertising .content p {
+    font-size: 16px;
+    color: #fafafa;
+}
+
+.container .deposit .deposit-advertising .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    border-radius: 40px;
+}
+
+.container .deposit .deposit-advertising img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    border-radius: 40px;
+    object-fit: cover;
+}
+/* --------------------------------- DEPOSIT -------------------------------- */

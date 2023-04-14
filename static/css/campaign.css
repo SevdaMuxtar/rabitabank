@@ -1,0 +1,108 @@
+.container .kampaniya-category ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 20px 0 40px 0;
+    border-bottom: 1px solid hsl(0, 0%, 83%);
+    height: 60px;
+    align-items: center;
+}
+
+.container .kampaniya-category ul li {
+    height: 100%;
+}
+
+.container .kampaniya-category ul li a {
+    display: inline-block;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #888888;
+    letter-spacing: 1px;
+}
+
+.container .kampaniya-category ul li a.active {
+    border-bottom: 3px solid hsl(0, 0%, 0%);
+    color: #000;
+}
+
+.container .kampaniyalar {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(400px, 1fr) );
+    gap: 50px;
+}
+
+.container .kampaniyalar .kampaniya {
+    width: 100%;
+    position: relative;
+    padding: 30px;
+    background: #f1f4ee;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+.container .kampaniyalar .kampaniya .kampaniya-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .kampaniyalar .kampaniya .kampaniya-content .left {
+    width: 50%;
+}
+
+.container .kampaniyalar .kampaniya .kampaniya-content .left .date p {
+    background: #cce7af;
+    padding: 5px 10px;
+    border-radius: 999px;
+    width: max-content;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container .kampaniyalar .kampaniya .kampaniya-content .left .title h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: #000;
+}
+
+.container .kampaniyalar .kampaniya .kampaniya-content .left .context p {
+    color: rgba(0,0,0,.6);
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.container .kampaniyalar .kampaniya .kampaniya-content .right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: max-content;
+}
+
+.container .kampaniyalar .kampaniya .kampaniya-content .right .img {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.container .kampaniyalar .kampaniya .kampaniya-content .right .img img {
+    position: absolute;
+    width: 90%;
+    aspect-ratio: 4/3;
+    max-height: 90%;
+    bottom: 0;
+    right: 0;
+    object-fit: contain;
+    transition: .3s;
+    border-radius: 30px;
+}
+
+.container .kampaniyalar .kampaniya:hover .kampaniya-content .right .img img {
+    width: 95%;
+    object-fit: contain;
+}

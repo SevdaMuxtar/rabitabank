@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/campaign.css') }}">
+
+{% endblock %}
+
+
+{% block title %}
+
+<title>Kampaniyalar / Fərdi - Rabitəbank</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="e-head-title">
+            <h1>Kampaniyalar</h1>
+        </div>
+
+        <div class="kampaniya-category">
+            <ul>
+
+
+
+
+
+                {% if all_data == "active" %}
+                <li><a onclick="kampaniyaCategory(this)" class="kampaniya-c-l active" href="/ferdi/kampaniyalar/">Bütün kampaniyalar</a></li>
+                {% else %}
+                <li><a onclick="kampaniyaCategory(this)" class="kampaniya-c-l" href="/ferdi/kampaniyalar/">Bütün kampaniyalar</a></li>
+                {% endif %}
+                
+                {% for category in category_data %}
+                {% if category.category_name == active %}
+
+                <li><a onclick="kampaniyaCategory(this)" class="kampaniya-c-l active" href="/ferdi/kampaniyalar/{{category.category_name}}">{{category.category_name}}</a></li>
+
+                {% else %}
+                <li><a onclick="kampaniyaCategory(this)" class="kampaniya-c-l" href="/ferdi/kampaniyalar/{{category.category_name}}">{{category.category_name}}</a></li>
+                {% endif %}
+                
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="kampaniyalar">
+
+            {% for campaign in data %}
+
+            <a href="/campaign/{{campaign.title}}/" class="kampaniya">
+                <div class="kampaniya-content">
+                    <div class="left">
+                        <div class="date">
+                            <p>{{ campaign.duration }}</p>
+                        </div>
+                        <div class="title">
+                            <h3>{{ campaign.title }}</h3>
+                        </div>
+                        <div class="context">
+                            <p>{{ campaign.context }}</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="img">
+                            <img src="{{ url_for('static', filename='media/campaign/'+campaign.image_path) }}" alt="">
+                            
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+
+    <script>
+
+    </script>
+    
+{% endblock %}

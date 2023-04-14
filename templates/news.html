@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+<!-- Slick Slider -->
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/slick/slick.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/slick/slick-theme.css') }}">
+<!-- Slick Slider -->
+
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/rangeslider.js-2.3.0/rangeslider.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+{% endblock %}
+
+
+
+{% block title %}
+<title>Xəbərlər / Fərdi - Rabitəbank</title>
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="e-head-title">
+            <h1>Xəbərlər</h1>
+        </div>
+    
+        <div class="news-category">
+            <ul>
+                {% if all_data == "active" %}
+                <li><a onclick="newsCategory(this)" class="news-c-l active" href="/xeberler/">Bütün elanlar</a></li>
+                {% else %}
+                <li><a onclick="newsCategory(this)" class="news-c-l" href="/xeberler/">Bütün elanlar</a></li>
+                {% endif %}
+                
+                {% for category in category_data %}
+                {% if category.category_name == active %}
+                <li><a onclick="newsCategory(this)" class="news-c-l active" href="/xeberler/category/{{category.category_name}}">{{category.category_name}}</a></li>
+                {% else %}
+                <li><a onclick="newsCategory(this)" class="news-c-l" href="/xeberler/category/{{category.category_name}}">{{category.category_name}}</a></li>
+                {% endif %}
+                
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="news">
+
+            {% for news in data %}
+
+            <a href="/xeberler/{{news.title}}/">
+                <div class="new">
+                    <div class="img">
+                        <img src="{{news.img}}" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="tag">
+                            <p>{{ news.share_time }}</p>
+                        </div>
+                        <div class="title">
+                            <p>{{ news.title }}</p>
+                        </div>
+                        <div class="text">
+                            <p>{{ news.context }}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            {% endfor %}
+
+
+        </div>
+
+{% endblock %}

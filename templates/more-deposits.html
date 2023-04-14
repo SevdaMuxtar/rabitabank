@@ -1,0 +1,567 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/more-deposits.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='js/vendor/rangeslider.js-2.3.0/rangeslider.css') }}">
+
+{% endblock %}
+
+
+{% block title %}
+
+<title>{{ filter_data.deposit_name.deposit_name }}</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+        <div class="banner">
+            <div class="left">
+                <h3>Əmanətin şərtlərini sərbəst şəkildə seçin!</h3>
+                <p>{{filter_data.context}}</p>
+            </div>
+            <div class="right">
+                <div class="img">
+                    <img src="{{ url_for('static', filename='images/emanetler/'+filter_data.image_path) }}" alt="">
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="features">
+            <div class="head">
+                <h3>Xüsusiyyətləri</h3>
+            </div>
+            {% if filter_data.deposit_name.deposit_name == filter_features_data.deposit_name.deposit_name %}
+            <div class="fearures-icon">
+                <div class="features-card">
+                    <div class="icon"><i class="fa-sharp fa-solid fa-euro-sign"></i></div>
+                    <div class="context">
+                        <p class="top">Əmanətin Minimal Məbləği</p>
+                        <p class="bottom">{{filter_features_data.min_value}}</p>
+                    </div>
+                </div>
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-regular fa-clock"></i></div>
+                    <div class="context">
+                        <div class="top">Müddət</div>
+                        <div class="bottom">{{filter_features_data.duration}}</div>
+                    </div>
+                </div>
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-regular fa-percent"></i></div>
+                    <div class="context">
+                        <div class="top">Faizlərin ödənişi</div>
+                        <div class="bottom">{{filter_features_data.payment_of_percent}}</div>
+                    </div>
+                </div>
+
+                <div class="features-card">
+                    <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="context">
+                        <div class="top">Sığorta</div>
+                        <div class="bottom">{{filter_features_data.insurance}}</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="content">
+                {{filter_features_data.text|safe}}
+                <a href="#" class="link">www.adif.az/page/sigortalanmis-mant</a>
+            </div>
+            {% endif %}
+
+            {% if filter_data.deposit_name.deposit_name == "Universal əmanət" %}
+            <div class="content monthly percent-value active">
+                <div class="head">
+                    <h3>Hesablanmış faizlərin ödənilmə tezliyi</h3>
+                    <div class="buttons">
+                        <a class="buttons-link active" onclick="buttonsLink(this)" value="monthly">Aylıq</a>
+                        <a class="buttons-link" onclick="buttonsLink(this)"  value="quarterly">Rüblük</a>
+                        <a class="buttons-link" onclick="buttonsLink(this)"  value="end-duration">Müddətin sonu</a>
+                    </div>
+                </div>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>Müddət</td>
+                            <td>AZN</td>
+                            <td>USD</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>Tələb olunanadək</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>3 ay</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>6 ay</td>
+                            <td>4,00%</td>
+                            <td>0,25%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>12 ay</td>
+                            <td>9,25%</td>
+                            <td>0,25%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>24 ay</td>
+                            <td>9,25%</td>
+                            <td>0,25%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>36 ay</td>
+                            <td>9,25%</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+
+            <div class="content quarterly percent-value">
+                <div class="head">
+                    <h3>Hesablanmış faizlərin ödənilmə tezliyi</h3>
+                    <div class="buttons">
+                        <a class="buttons-link" onclick="buttonsLink(this)"  value="monthly">Aylıq</a>
+                        <a class="buttons-link active" onclick="buttonsLink(this)" value="quarterly">Rüblük</a>
+                        <a class="buttons-link" onclick="buttonsLink(this)"  value="end-duration">Müddətin sonu</a>
+                    </div>
+                </div>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>Müddət</td>
+                            <td>AZN</td>
+                            <td>USD</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>Tələb olunanadək</td>
+                            <td>1,00%</td>
+                            <td>0,10%</td>
+                            <td>0,05%</td>
+                        </tr>
+                        <tr>
+                            <td>3 ay</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>6 ay</td>
+                            <td>5,00%</td>
+                            <td>0,35%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>12 ay</td>
+                            <td>9,50%</td>
+                            <td>0,35%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>24 ay</td>
+                            <td>9,50%</td>
+                            <td>0,35%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>36 ay</td>
+                            <td>9,75%</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+
+            <div class="content end-duration percent-value">
+                <div class="head">
+                    <h3>Hesablanmış faizlərin ödənilmə tezliyi</h3>
+                    <div class="buttons">
+                        <a class="buttons-link " onclick="buttonsLink(this)"  value="monthly">Aylıq</a>
+                        <a class="buttons-link" onclick="buttonsLink(this)"  value="quarterly">Rüblük</a>
+                        <a class="buttons-link active" onclick="buttonsLink(this)" value="end-duration">Müddətin sonu</a>
+                    </div>
+                </div>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>Müddət</td>
+                            <td>AZN</td>
+                            <td>USD</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>Tələb olunanadək</td>
+                            <td>1%</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>3 ay</td>
+                            <td>3,00%</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>6 ay</td>
+                            <td>6,00%</td>
+                            <td>0,50%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>12 ay</td>
+                            <td>10,00%</td>
+                            <td>0,50%</td>
+                            <td>0,50%</td>
+                        </tr>
+                        <tr>
+                            <td>24 ay</td>
+                            <td>10,00%</td>
+                            <td>0,50%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>36 ay</td>
+                            <td>10,50%</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+
+
+            <div class="content end-table">
+                <div class="head">
+                    <h3>Müqaviləyə vaxtından əvvəl xitam verildikdə faizlərin hesablanması</h3>
+                </div>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>Götürülmə müddəti</td>
+                            <td>Əmanətin faizlərin ödəniləcək hissəsi</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>AZN</td>
+                            <td>USD</td>
+                            <td>EUR</td>
+                        </tr>
+                        <tr>
+                            <td>0 - 30 gün</td>
+                            <td>0%</td>
+                            <td>0%</td>
+                            <td>0%</td>
+                        </tr>
+                        <tr>
+                            <td>31 – 180 gün</td>
+                            <td>10%</td>
+                            <td>10%</td>
+                            <td>10%</td>
+                        </tr>
+                        <tr>
+                            <td>181 – 360 gün</td>
+                            <td>20%</td>
+                            <td>25%</td>
+                            <td>25%</td>
+                        </tr>
+                        <tr>
+                            <td>360 gündən sonra</td>
+                            <td>30%</td>
+                            <td>50%</td>
+                            <td>50%</td>
+                        </tr>
+                    </table>
+                </div>
+                <p class="detail">* 1 iyun 2020-ci il tarixindən etibarən milli valyutada olan qorunan əmanətlər üzrə illik faiz dərəcəsinin yuxarı həddini 12%, xarici valyutada isə 2,5% müəyyən edilib.</p>
+            </div>
+
+            {% endif %}
+
+        </div>
+
+        <div class="deposit-calculator">
+            <div class="head">
+                <h3>Əmanət kalkulyatoru</h3>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <div class="currency">
+                        <p class="title">Valyutası</p>
+                        <ul>
+                            <li><a class="currency-link active" onclick="currencyLink(this)">₼</a></li>
+                            <li><a class="currency-link" onclick="currencyLink(this)">$</a></li>
+                            <li><a class="currency-link" onclick="currencyLink(this)">€</a></li>
+                        </ul>
+                    </div>
+                    <div class="deposit-value">
+                        <p class="title">Əmanət məbləği</p>
+
+                        <div class="calculator">
+                            <div class="values">
+                                <div class="first-value">
+                                    <div class="displayed">
+                                        <small>Kredit məbləği</small>
+                                        <div class="cal-input">
+                                            <input id="credit-value" class="valueInput" type="number" min="20000" max="1000000" value="20000" step="1000" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "7">
+                                            <span>AZN</span>
+                                        </div>
+                                    </div>
+                                    <input id="inputSlider-1" class="inputSlider" type="range" name="monthInputEl" id="monthInputEl"
+                                        min="20000" max="1000000" value="20000" step="1000">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="deposit-duration">
+                        <p class="title">Əmanət müddəti</p>
+                        <ul>
+                            <li><a class="deposit-duration-link active" onclick="depositDurationLink(this)">6 Ay</a></li>
+                            <li><a class="deposit-duration-link" onclick="depositDurationLink(this)">12 Ay</a></li>
+                            <li><a class="deposit-duration-link" onclick="depositDurationLink(this)">24 Ay</a></li>
+                            <li><a class="deposit-duration-link" onclick="depositDurationLink(this)">36 Ay</a></li>
+                        </ul>
+                    </div>
+                    <div class="pay">
+                        <p class="title">Hesablanmış faizlərin ödənilmə tezliyi</p>
+                        <ul>
+                            <li><a class="pay-link active" onclick="payLink(this)">Aylıq</a></li>
+                            <li><a class="pay-link" onclick="payLink(this)">Rüblük</a></li>
+                            <li><a class="pay-link" onclick="payLink(this)">Müddətin sonu</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="title">
+                        <h3>Şərtlər:</h3>
+                    </div>
+                    <div class="value">
+                        <div class="total-percent">
+                            <p class="head">Ümumi faiz gəliri</p>
+                            <p id="head-value">400 <span>₼</span></p>
+                        </div>
+                        <div class="monthly">
+                            <p class="head">Aylıq faiz gəliri</p>
+                            <p id="monthly-value">66.66₼</p>
+                        </div>
+                        <div class="percent-degree">
+                            <p class="head">Faiz dərəcəsi</p>
+                            <p id="percent-degree-value">4%</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="result">
+                        <p class="head">Əmanət məbləği</p>
+                        <div><p id="result-deposit-value">20000 </p><span>AZN</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="online-deposit-order">
+            <form action="">
+                <div class="head">
+                    <h3>Onlayn əmanət sifariş edin</h3>
+                    <p>Banka getməyə ehtiyac yoxdur! <br> Çünki, artıq Bankınız hər zaman cibinizdədir.</p>
+                </div>
+                <div class="second">
+                    <div class="name">
+                        <label for="">Adınız <span class="important">*</span></label>
+                        <br>
+                        <input type="text">
+                    </div>
+                    <div class="surname">
+                        <label for="">Soyadınız <span class="important">*</span></label>
+                        <br>
+                        <input type="text">
+                    </div>
+                    <div class="number">
+                        <label for="">Saxlanc seyfləri</label>
+                        <br>
+                        <input type="tel" name="phone" id="phone" placeholder="(050) 123-45-67" autocomplete="tel" maxlength="15" class="form-control" pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{2}-[0-9]{2}" required />
+                    </div>
+                </div>
+                <div class="important-text">
+                    <p class="star">*</p>
+                    <p>Məlumatları Azərbaycan dilində daxil edin.</p>
+                </div>
+                <div class="button">
+                    <button>Sifariş et</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="e-head-title">
+            <h1>Əmanətlər</h1>
+        </div>
+
+        <div class="slidersx">
+
+            {% for deposit in data %}
+            <a href="/ferdi-musteriler/emanetler-az/{{deposit.deposit_name.deposit_name}}/" class="slide">
+                <div>
+                    <div class="slide-content">
+                        <div class="title">
+                            <h2>{{deposit.deposit_name.deposit_name}}</h2>
+                        </div>
+                        <div class="title-content">
+                            <p>{{deposit.context}}</p>
+                        </div>
+                        <div class="percent">
+                            <div class="l-percent">
+                                <p>Müddəti</p>
+                                <p>{{deposit.duration}}</p>
+                            </div>
+                            <div class="r-percent">
+                                <p>Faiz dərəcəsi</p>
+                                <p>{{deposit.percent_degree}}</p>
+                            </div>
+                        </div>
+                        <div class="currency">
+                            <p>Valyuta</p>
+                            <p>{{deposit.currency}}</p>
+                        </div>
+                    </div>
+                    <div class="slide-img">
+                        <img src="{{ url_for('static', filename='media/deposits/'+deposit.image_path) }}" alt="">
+                    </div>
+                    <div class="read-more">
+                        <span><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+
+        </div>
+
+
+    <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/vendor/slick/slick.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/vendor/rangeslider.js-2.3.0/rangeslider.min.js') }}"></script>
+
+    <script>
+        var currencyLinkList = document.querySelectorAll(".currency-link")
+        var depositDurationLinkList = document.querySelectorAll(".deposit-duration-link")
+        var payLinkList = document.querySelectorAll(".pay-link")
+        
+        document.getElementById('phone').addEventListener('input', function (e) {
+            var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '')+ (x[4] ? '-' + x[4] : '');
+            console.log(x)
+        });
+
+        function buttonsLink(e) {
+            
+            let percentValue = document.querySelectorAll(".percent-value")
+            let buttonsLinkList = document.querySelectorAll(".buttons-link")
+            let value = e.getAttribute('value')
+            
+            percentValue.forEach(element => {
+                element.classList.remove('active')
+                if (element.classList[1] == value) {
+                    element.classList.add("active")
+                }
+            });
+            
+        }
+
+        function currencyLink(e) {
+                currencyLinkList.forEach(element => {
+                    element.classList.remove("active")
+                });
+                e.classList.add("active")
+        }
+        function depositDurationLink(e) {
+                depositDurationLinkList.forEach(element => {
+                    element.classList.remove("active")
+                });
+                e.classList.add("active")
+        }
+        function payLink(e) {
+                payLinkList.forEach(element => {
+                    element.classList.remove("active")
+                });
+                e.classList.add("active")
+        }
+
+
+        var $element = $('.inputSlider');
+        $element
+            .rangeslider({
+            polyfill: false
+            })
+
+        for (let slider of document.querySelectorAll(".rangeslider__handle")) {
+            slider.addEventListener("mouseenter", () => {
+            $element.rangeslider({})
+                .on('input', function () {
+                    if (slider.parentElement.id === "js-rangeslider-0") {
+                        if (this.id === "inputSlider-1") {
+                        var creditValue = parseInt(this.value)
+                        document.querySelector("#credit-value").value = creditValue
+                    }
+                }
+                calculateResults()
+                
+            });
+        })
+
+        }
+
+        var creditVAlueInputx = document.getElementById("credit-value")
+        creditVAlueInputx.addEventListener("input", () => {
+            calculateResults()
+        })
+
+        calculateResults()
+
+        function calculateResults() {
+        var creditValueInput = document.querySelector("#credit-value").value
+
+            creditValueInput = parseInt(creditValueInput)
+            totalPercentValue = Math.floor(creditValueInput / 50)
+            monthlyPercent = Math.floor(totalPercentValue / 3)
+            totalResultValue = Math.floor(creditValueInput);
+
+            updateUI()
+        }
+
+        function updateUI() {
+            document.getElementById("head-value").innerText = `${totalPercentValue} ₼`
+            document.getElementById("monthly-value").innerText = `${monthlyPercent} ₼`
+            document.getElementById("result-deposit-value").innerText = `${totalResultValue}`
+        }
+
+    </script>
+    
+
+{% endblock %}
